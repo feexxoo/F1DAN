@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | F1DAN Secure Access</title>
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #061913;
+      font-family: 'Lato', sans-serif;
+      color: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 1rem;
+    }
+
+    .login-box {
+      background-color: #0e241a;
+      padding: 2rem;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 420px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    }
+
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+    }
+
+    input[type="file"] {
+      background-color: #f4f4f4;
+      color: #000;
+    }
+
+    button {
+      background-color: #b6f5c2;
+      color: #061913;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #secure-content {
+      display: none;
+      margin-top: 2rem;
+    }
+
+    .success {
+      color: #8fffbf;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-box">
+    <h1>Secure Login</h1>
+    <input type="text" id="username" placeholder="Username" required />
+    <input type="password" id="password" placeholder="Password" required />
+    <p>Upload 2 forms of valid ID:</p>
+    <input type="file" id="id1" required /><br/>
+    <input type="file" id="id2" required />
+    <button onclick="login()">Login & Verify</button>
+    <p id="login-message"></p>
+  </div>
+
+  <div id="secure-content">
+    <h2 class="success">Access Granted</h2>
+    <p>Welcome, you’ve successfully logged in and uploaded valid ID.</p>
+    <p>You may now proceed to <a href="booking.html" style="color:#a0ffc2;">secure booking</a>.</p>
+  </div>
+
+  <script>
+    function login() {
+      const user = document.getElementById('username').value;
+      const pass = document.getElementById('password').value;
+      const id1 = document.getElementById('id1').files.length;
+      const id2 = document.getElementById('id2').files.length;
+
+      // Placeholder user/pass (change for real credentials)
+      const validUser = "fidan";
+      const validPass = "f1dansecure2024";
+
+      if (user === validUser && pass === validPass && id1 && id2) {
+        document.cookie = "auth=true; path=/";
+        document.querySelector('.login-box').style.display = 'none';
+        document.getElementById('secure-content').style.display = 'block';
+      } else {
+        document.getElementById('login-message').innerText = "Invalid login or missing IDs. Try again.";
+        document.getElementById('login-message').style.color = "#ff9999";
+      }
+    }
+  </script>
+
+</body>
+</html>
