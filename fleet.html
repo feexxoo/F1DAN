@@ -6,13 +6,42 @@
   <title>Our Fleet | F1DAN</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Playfair Display', serif;
-      background: #061913;
+      font-family: 'Lato', sans-serif;
+      background-color: #061913;
       color: #f4f4f4;
     }
+
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .fleet-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      padding: 3rem 2rem;
+    }
+
+    .fleet-item {
+      background-color: #0e241a;
+      border-radius: 12px;
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      color: #b6f5c2;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
     header, footer {
       background-color: #0e241a;
       padding: 1rem 2rem;
@@ -21,39 +50,19 @@
       align-items: center;
       flex-wrap: wrap;
     }
-    header img {
-      height: 50px;
-    }
+
     nav a {
       color: #e2ffe0;
-      margin-left: 20px;
+      margin-left: 15px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 500;
+      font-family: 'Poppins', sans-serif;
     }
+
     nav a:hover {
-      color: #c0f5c7;
+      color: #a0ffc2;
     }
-    .fleet-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      padding: 3rem 2rem;
-    }
-    .fleet-gallery img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.3);
-    }
-    .fleet-gallery h3 {
-      margin-top: 0.5rem;
-      text-align: center;
-      font-weight: normal;
-      font-size: 1.1rem;
-      color: #d6ffe2;
-    }
-    .fleet-item {
-      text-align: center;
-    }
+
     footer {
       text-align: center;
       padding: 1rem;
@@ -78,35 +87,22 @@
     </nav>
   </header>
 
-  <main>
-    <h1 style="text-align:center; padding-top:2rem;">Our Curated Luxury Fleet</h1>
-    <div class="fleet-gallery">
-      <div class="fleet-item">
-        <img src="media/exotic1.jpg" alt="Rolls-Royce Cullinan">
-        <h3>Rolls-Royce Cullinan</h3>
-      </div>
-      <div class="fleet-item">
-        <img src="media/exotic2.jpg" alt="Lamborghini SVJ Aventador">
-        <h3>Lamborghini Aventador SVJ</h3>
-      </div>
-      <div class="fleet-item">
-        <img src="media/exotic3.jpg" alt="Mercedes Maybach GLS 600">
-        <h3>Maybach GLS 600</h3>
-      </div>
-      <div class="fleet-item">
-        <img src="media/exotic4.jpg" alt="Rolls-Royce Wraith">
-        <h3>Rolls-Royce Wraith</h3>
-      </div>
-      <div class="fleet-item">
-        <img src="media/exotic5.jpg" alt="Cadillac Escalade ESV">
-        <h3>Cadillac Escalade ESV</h3>
-      </div>
-      <div class="fleet-item">
-        <img src="media/exotic6.jpg" alt="GMC Yukon Denali Ultimate">
-        <h3>GMC Yukon Denali Ultimate</h3>
-      </div>
-    </div>
-  </main>
+  <h1>Explore Our Signature Fleet</h1>
+
+  <section class="fleet-grid">
+    <div class="fleet-item">Escalade ESV</div>
+    <div class="fleet-item">Bentley Bentayga</div>
+    <div class="fleet-item">Rolls Royce Cullinan</div>
+    <div class="fleet-item">Rolls Royce Phantom</div>
+    <div class="fleet-item">Rolls Royce Wraith</div>
+    <div class="fleet-item">Rolls Royce Ghost</div>
+    <div class="fleet-item">Maybach GLS 600</div>
+    <div class="fleet-item">Maybach S550</div>
+    <div class="fleet-item">GMC Yukon Denali Ultimate</div>
+    <div class="fleet-item">Lincoln Navigator</div>
+    <div class="fleet-item">Maybach Sprinter</div>
+    <div class="fleet-item">Mercedes Sprinter</div>
+  </section>
 
   <footer>
     <p>&copy; 2025 F1DAN Luxury Concierge</p>
