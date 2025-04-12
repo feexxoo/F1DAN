@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>F1DAN | Luxury Chauffeured Experience</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Lato', sans-serif;
+      background: #061913;
+      color: #f4f4f4;
+    }
+    h1, h2, h3 {
+      font-family: 'Poppins', sans-serif;
+    }
+    header {
+      background-color: #0e241a;
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    header img {
+      height: 50px;
+    }
+    nav a {
+      color: #e2ffe0;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif;
+    }
+    nav a:hover {
+      color: #c0f5c7;
+    }
+    .hero {
+      background: url("media/exotic6.jpg") no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-align: center;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      color: #f2f2f2;
+      padding: 0 1rem;
+    }
+    .hero-content p {
+      font-size: 1.4rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .gallery, .fleet-gallery, .boat-gallery {
+      padding: 3rem 2rem;
+      background-color: #091e16;
+    }
+    .gallery a img, .gallery-grid img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    .fleet-gallery h2, .boat-gallery h2 {
+      text-align: center;
+      color: #b6f5c2;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .gallery-grid p {
+      text-align: center;
+      margin-top: 0.5rem;
+      font-family: 'Poppins', sans-serif;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: #0e241a;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.jpg" alt="F1DAN Logo" />
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="chauffeured-cars.html">Chauffeured Cars</a>
+      <a href="music-video-cars.html">Music Video Cars</a>
+      <a href="tours.html">City Tours</a>
+      <a href="all-day-packages.html">All-Day Packages</a>
+      <a href="fleet.html">Fleet</a>
+      <a href="boats.html">Luxury Boats</a>
+      <a href="event-venues.html">Event Venues</a>
+      <a href
