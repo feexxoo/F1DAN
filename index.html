@@ -1,6 +1,4 @@
-git add index.html
-git commit -m "Updated index with image grid and hero photo"
-git push origin main<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -8,7 +6,7 @@ git push origin main<!DOCTYPE html>
   <title>F1DAN | Luxury Chauffeured Experience</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -17,9 +15,9 @@ git push origin main<!DOCTYPE html>
       color: #f4f4f4;
     }
 
-    header, footer {
+    header {
       background-color: #0e241a;
-      padding: 1.5rem 2rem;
+      padding: 1.2rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -44,7 +42,7 @@ git push origin main<!DOCTYPE html>
 
     .hero {
       background: url("media/exotic1.jpg") no-repeat center center/cover;
-      height: 95vh;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -62,19 +60,20 @@ git push origin main<!DOCTYPE html>
       background-color: rgba(0, 0, 0, 0.5);
     }
 
-    .hero h1, .hero p {
+    .hero-content {
       position: relative;
       z-index: 1;
       color: #f2f2f2;
     }
 
-    .hero h1 {
-      font-size: 3.5rem;
+    .hero-content img {
+      width: 220px;
+      height: auto;
       margin-bottom: 1rem;
     }
 
-    .hero p {
-      font-size: 1.25rem;
+    .hero-content p {
+      font-size: 1.3rem;
     }
 
     .gallery {
@@ -93,17 +92,28 @@ git push origin main<!DOCTYPE html>
 
     footer {
       text-align: center;
-      padding: 1rem;
+      padding: 1.5rem;
       background-color: #0e241a;
       font-size: 0.9rem;
       color: #ccc;
+    }
+
+    @media screen and (max-width: 768px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="logo.png" alt="F1DAN Logo" />
+    <img src="logo.jpg" alt="F1DAN Logo" />
     <nav>
       <a href="index.html">Home</a>
       <a href="chauffeured-cars.html">Chauffeured Cars</a>
@@ -118,8 +128,10 @@ git push origin main<!DOCTYPE html>
   </header>
 
   <section class="hero">
-    <h1>F1DAN Luxury</h1>
-    <p>Chauffeured Excellence. Exotic Access. Toronto’s Premium Concierge Service.</p>
+    <div class="hero-content">
+      <img src="logo.jpg" alt="F1DAN Logo">
+      <p>Chauffeured Excellence. Exotic Access. Toronto’s Premium Concierge Service.</p>
+    </div>
   </section>
 
   <section class="gallery">
