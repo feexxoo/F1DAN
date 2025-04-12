@@ -2,20 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>F1DAN | Ultimate Luxury Chauffeured Experience</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>F1DAN | Luxury Chauffeured Experiences</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Playfair Display', serif;
-      background-color: #071e17;
-      color: #f2f2f2;
+      background: #061913;
+      color: #f4f4f4;
     }
-    header {
-      background-color: #0d1b13;
-      padding: 1rem 2rem;
+    header, footer {
+      background-color: #0e241a;
+      padding: 1.5rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -25,84 +26,73 @@
       height: 50px;
     }
     nav a {
-      color: white;
+      color: #e2ffe0;
       margin-left: 20px;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: bold;
+      font-size: 1rem;
     }
     nav a:hover {
-      color: #b7f7b1;
+      color: #c0f5c7;
     }
-    .hero {
-      background-image: url("media/exotic1.jpg");
-      background-size: cover;
-      background-position: center;
-      height: 85vh;
+    .banner {
+      background: url("media/hero-video.mp4") no-repeat center center/cover;
+      height: 80vh;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: #f8f8f8;
       text-align: center;
-      color: white;
-      padding: 2rem;
       position: relative;
     }
-    .hero::after {
-      content: "";
+    .banner::after {
+      content: '';
       position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.5);
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
     }
-    .hero h1 {
+    .banner h1, .banner p {
+      position: relative;
+      z-index: 1;
+    }
+    .banner h1 {
       font-size: 3rem;
-      z-index: 1;
-      color: #adefc1;
+      color: #b2ffb9;
+      font-style: italic;
     }
-    .hero p {
-      z-index: 1;
-      font-size: 1.3rem;
-      color: #f5f5f5;
-    }
-    .cta-button {
+    .banner p {
+      font-size: 1.25rem;
       margin-top: 1rem;
-      z-index: 1;
-      background-color: #c0f5c7;
-      color: #071e17;
-      padding: 0.8rem 1.5rem;
-      border-radius: 8px;
-      font-weight: bold;
-      text-decoration: none;
     }
-    section {
+    main {
       padding: 3rem 2rem;
-      text-align: center;
     }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      max-width: 1000px;
-      margin: auto;
+    .content {
+      max-width: 900px;
+      margin: 0 auto;
     }
-    .service-card {
-      background-color: #102c22;
-      border-radius: 10px;
-      padding: 1.5rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    .content h2 {
+      font-size: 2rem;
+      color: #ccefd1;
+      margin-bottom: 1rem;
     }
-    .service-card h3 {
-      color: #d8ffde;
+    .content p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #e8f5e9;
     }
     footer {
-      background-color: #0d1b13;
-      padding: 1.5rem;
       text-align: center;
-      color: #aaa;
+      padding: 1rem;
+      background-color: #0e241a;
       font-size: 0.9rem;
+      color: #ccc;
     }
   </style>
 </head>
 <body>
-
   <header>
     <img src="logo.png" alt="F1DAN Logo" />
     <nav>
@@ -118,47 +108,20 @@
     </nav>
   </header>
 
-  <div class="hero">
-    <div style="z-index:1;">
-      <h1>Welcome to F1DAN Concierge</h1>
-      <p>Luxury hospitality, exotic cars, yacht rentals & elite services in Toronto</p>
-      <a class="cta-button" href="chauffeured-cars.html">Start Booking</a>
-    </div>
-  </div>
-
-  <section>
-    <h2 style="color:#b2ffb9;">Our Signature Services</h2>
-    <div class="services-grid">
-      <div class="service-card">
-        <h3>Chauffeured Cars</h3>
-        <p>VIP black car services, with full-day and evening packages</p>
-      </div>
-      <div class="service-card">
-        <h3>Music Video Cars</h3>
-        <p>Film-ready exotics delivered on set with drivers or static placement</p>
-      </div>
-      <div class="service-card">
-        <h3>City Tours</h3>
-        <p>GTA experiences with a host, top food, and private stops</p>
-      </div>
-      <div class="service-card">
-        <h3>Luxury Boats</h3>
-        <p>Private boat rentals with crew, servers, and security</p>
-      </div>
-      <div class="service-card">
-        <h3>Fleet Showcase</h3>
-        <p>Rolls Royce, Maybach, Lamborghini, Escalade, Yukon and more</p>
-      </div>
-      <div class="service-card">
-        <h3>Event Venues</h3>
-        <p>Curated venues for private events, weddings & elite parties</p>
-      </div>
-    </div>
+  <section class="banner">
+    <h1>F1DAN | Luxury Chauffeured Experiences</h1>
+    <p>Welcome to Toronto’s elite concierge hub – chauffeured cars, luxury boats, and bespoke services.</p>
   </section>
 
-  <footer>
-    <p>&copy; 2025 F1DAN Luxury Concierge. All rights reserved. | Toronto, Canada</p>
-  </footer>
+  <main>
+    <div class="content">
+      <h2>Why Choose F1DAN?</h2>
+      <p>At F1DAN, we redefine luxury. Our premium services are crafted to offer the most elegant, seamless, and secure experiences across Toronto and beyond. Whether you’re booking a chauffeured ride, a private yacht, or a curated city tour, our commitment to excellence ensures your experience will be unforgettable.</p>
+    </div>
+  </main>
 
+  <footer>
+    <p>&copy; 2025 F1DAN Luxury Concierge. All rights reserved.</p>
+  </footer>
 </body>
 </html>

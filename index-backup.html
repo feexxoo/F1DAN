@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>F1DAN | Ultimate Luxury Chauffeured Experience</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      background-color: #071e17;
+      color: #f2f2f2;
+    }
+    header {
+      background-color: #0d1b13;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    header img {
+      height: 50px;
+    }
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    nav a:hover {
+      color: #b7f7b1;
+    }
+    .hero {
+      background-image: url("media/exotic1.jpg");
+      background-size: cover;
+      background-position: center;
+      height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 2rem;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .hero h1 {
+      font-size: 3rem;
+      z-index: 1;
+      color: #adefc1;
+    }
+    .hero p {
+      z-index: 1;
+      font-size: 1.3rem;
+      color: #f5f5f5;
+    }
+    .cta-button {
+      margin-top: 1rem;
+      z-index: 1;
+      background-color: #c0f5c7;
+      color: #071e17;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    section {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .service-card {
+      background-color: #102c22;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+    .service-card h3 {
+      color: #d8ffde;
+    }
+    footer {
+      background-color: #0d1b13;
+      padding: 1.5rem;
+      text-align: center;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.png" alt="F1DAN Logo" />
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="chauffeured-cars.html">Chauffeured Cars</a>
+      <a href="music-video-cars.html">Music Video Cars</a>
+      <a href="tours.html">City Tours</a>
+      <a href="all-day-packages.html">All-Day Packages</a>
+      <a href="fleet.html">Fleet</a>
+      <a href="boats.html">Luxury Boats</a>
+      <a href="event-venues.html">Event Venues</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div style="z-index:1;">
+      <h1>Welcome to F1DAN Concierge</h1>
+      <p>Luxury hospitality, exotic cars, yacht rentals & elite services in Toronto</p>
+      <a class="cta-button" href="chauffeured-cars.html">Start Booking</a>
+    </div>
+  </div>
+
+  <section>
+    <h2 style="color:#b2ffb9;">Our Signature Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Chauffeured Cars</h3>
+        <p>VIP black car services, with full-day and evening packages</p>
+      </div>
+      <div class="service-card">
+        <h3>Music Video Cars</h3>
+        <p>Film-ready exotics delivered on set with drivers or static placement</p>
+      </div>
+      <div class="service-card">
+        <h3>City Tours</h3>
+        <p>GTA experiences with a host, top food, and private stops</p>
+      </div>
+      <div class="service-card">
+        <h3>Luxury Boats</h3>
+        <p>Private boat rentals with crew, servers, and security</p>
+      </div>
+      <div class="service-card">
+        <h3>Fleet Showcase</h3>
+        <p>Rolls Royce, Maybach, Lamborghini, Escalade, Yukon and more</p>
+      </div>
+      <div class="service-card">
+        <h3>Event Venues</h3>
+        <p>Curated venues for private events, weddings & elite parties</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 F1DAN Luxury Concierge. All rights reserved. | Toronto, Canada</p>
+  </footer>
+
+</body>
+</html>
