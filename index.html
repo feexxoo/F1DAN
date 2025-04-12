@@ -1,9 +1,11 @@
-<!DOCTYPE html>
+git add index.html
+git commit -m "Updated index with image grid and hero photo"
+git push origin main<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>F1DAN | Luxury Chauffeured Experiences</title>
+  <title>F1DAN | Luxury Chauffeured Experience</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -14,6 +16,7 @@
       background: #061913;
       color: #f4f4f4;
     }
+
     header, footer {
       background-color: #0e241a;
       padding: 1.5rem 2rem;
@@ -22,9 +25,11 @@
       align-items: center;
       flex-wrap: wrap;
     }
+
     header img {
       height: 50px;
     }
+
     nav a {
       color: #e2ffe0;
       margin-left: 20px;
@@ -32,57 +37,60 @@
       font-weight: bold;
       font-size: 1rem;
     }
+
     nav a:hover {
       color: #c0f5c7;
     }
-    .banner {
-      background: url("media/hero-video.mp4") no-repeat center center/cover;
-      height: 80vh;
+
+    .hero {
+      background: url("media/exotic1.jpg") no-repeat center center/cover;
+      height: 95vh;
       display: flex;
-      justify-content: center;
-      align-items: center;
       flex-direction: column;
-      color: #f8f8f8;
+      align-items: center;
+      justify-content: center;
       text-align: center;
       position: relative;
     }
-    .banner::after {
-      content: '';
+
+    .hero::after {
+      content: "";
       position: absolute;
       top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5);
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
     }
-    .banner h1, .banner p {
+
+    .hero h1, .hero p {
       position: relative;
       z-index: 1;
+      color: #f2f2f2;
     }
-    .banner h1 {
-      font-size: 3rem;
-      color: #b2ffb9;
-      font-style: italic;
-    }
-    .banner p {
-      font-size: 1.25rem;
-      margin-top: 1rem;
-    }
-    main {
-      padding: 3rem 2rem;
-    }
-    .content {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .content h2 {
-      font-size: 2rem;
-      color: #ccefd1;
+
+    .hero h1 {
+      font-size: 3.5rem;
       margin-bottom: 1rem;
     }
-    .content p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: #e8f5e9;
+
+    .hero p {
+      font-size: 1.25rem;
     }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 3rem 2rem;
+      background: #091e16;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+
     footer {
       text-align: center;
       padding: 1rem;
@@ -93,6 +101,7 @@
   </style>
 </head>
 <body>
+
   <header>
     <img src="logo.png" alt="F1DAN Logo" />
     <nav>
@@ -108,20 +117,23 @@
     </nav>
   </header>
 
-  <section class="banner">
-    <h1>F1DAN | Luxury Chauffeured Experiences</h1>
-    <p>Welcome to Toronto’s elite concierge hub – chauffeured cars, luxury boats, and bespoke services.</p>
+  <section class="hero">
+    <h1>F1DAN Luxury</h1>
+    <p>Chauffeured Excellence. Exotic Access. Toronto’s Premium Concierge Service.</p>
   </section>
 
-  <main>
-    <div class="content">
-      <h2>Why Choose F1DAN?</h2>
-      <p>At F1DAN, we redefine luxury. Our premium services are crafted to offer the most elegant, seamless, and secure experiences across Toronto and beyond. Whether you’re booking a chauffeured ride, a private yacht, or a curated city tour, our commitment to excellence ensures your experience will be unforgettable.</p>
-    </div>
-  </main>
+  <section class="gallery">
+    <img src="media/exotic1.jpg" alt="Exotic Car 1" />
+    <img src="media/exotic2.jpg" alt="Exotic Car 2" />
+    <img src="media/exotic3.jpg" alt="Exotic Car 3" />
+    <img src="media/exotic4.jpg" alt="Exotic Car 4" />
+    <img src="media/exotic5.jpg" alt="Exotic Car 5" />
+    <img src="media/exotic6.jpg" alt="Exotic Car 6" />
+  </section>
 
   <footer>
     <p>&copy; 2025 F1DAN Luxury Concierge. All rights reserved.</p>
   </footer>
+
 </body>
 </html>
