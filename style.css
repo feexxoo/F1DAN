@@ -125,4 +125,121 @@ body {
     max-width: 800px;
     margin: 0 auto;
   }
+  .carousel-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+  }
+  
+  .carousel {
+    display: flex;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+  
+  .carousel-item {
+    display: inline-block;
+    background-color: #0e241a;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    min-width: 250px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+  }
+  
+  .carousel-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .carousel-item p {
+    color: #e2ffe0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    padding: 0.75rem;
+    margin: 0;
+  }
+  .carousel-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    white-space: nowrap;
+  }
+  
+  .carousel {
+    display: flex;
+    gap: 1rem;
+    padding: 0 1rem;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+  }
+  
+  .carousel-item {
+    display: inline-block;
+    scroll-snap-align: start;
+    background-color: #0e241a;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    min-width: 250px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .carousel-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .carousel-item p {
+    color: #e2ffe0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    padding: 0.75rem;
+    margin: 0;
+  }
+  .carousel-item.main {
+    transform: scale(1.1);
+    border: 2px solid #b6f5c2;
+    z-index: 2;
+  }  
+  /* Mobile responsiveness */
+  @media (max-width: 600px) {
+    .carousel-item {
+      min-width: 85%;
+    }
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -webkit-tap-highlight-color: transparent;
+    padding-bottom: 60px; /* avoid keyboard overlap on mobile */
+  }
+  
+  input, button, select, textarea {
+    font-family: inherit;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+    padding: 0.75rem;
+    box-sizing: border-box;
+  }
   
