@@ -1,188 +1,54 @@
-/* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@500;700&display=swap');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>F1DAN | Chauffeured Cars</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-/* Base Settings */
-body {
-  margin: 0;
-  font-family: 'Lato', sans-serif;
-  background-color: #061913;
-  color: #f4f4f4;
-}
+  <!-- HEADER -->
+  <header>
+    <img src="logo.jpg" alt="F1DAN Logo" />
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="chauffeured-cars.html">Chauffeured Cars</a>
+      <a href="music-video-cars.html">Music Video Cars</a>
+      <a href="tours.html">City Tours</a>
+      <a href="all-day-packages.html">All-Day Packages</a>
+      <a href="fleet.html">Fleet</a>
+      <a href="boats.html">Luxury Boats</a>
+      <a href="event-venues.html">Event Venues</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-/* Headers and Typography */
-h1, h2, h3, h4, h5, h6,
-.hero-content p {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-}
+  <!-- BANNER SECTION -->
+  <section class="page-banner" style="background-image:url('media/exotic6.jpg');">
+    <div class="banner-content">
+      <h1>Chauffeured Cars</h1>
+      <p>Arrive in unmatched luxury. F1DAN offers professionally chauffeured black XL SUVs, Maybachs, Rolls Royce, and exotic vehicles for every occasion.</p>
+    </div>
+  </section>
 
-nav a {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-}
+  <!-- GALLERY SECTION -->
+  <section class="gallery">
+    <div><img src="media/escalade-esv.jpg" alt="Escalade ESV"><p>Escalade ESV</p></div>
+    <div><img src="media/maybach-gls600.jpg" alt="Maybach GLS 600"><p>Maybach GLS 600</p></div>
+    <div><img src="media/maybach-s550.jpg" alt="Maybach S550"><p>Maybach S550</p></div>
+    <div><img src="media/rr-cullinan.jpg" alt="Rolls Royce Cullinan"><p>Rolls Royce Cullinan</p></div>
+    <div><img src="media/rr-phantom.jpg" alt="Rolls Royce Phantom"><p>Rolls Royce Phantom</p></div>
+    <div><img src="media/rr-wraith.jpg" alt="Rolls Royce Wraith"><p>Rolls Royce Wraith</p></div>
+    <div><img src="media/rr-ghost.jpg" alt="Rolls Royce Ghost"><p>Rolls Royce Ghost</p></div>
+    <div><img src="media/mclaren-570s.jpg" alt="McLaren 570s"><p>McLaren 570s</p></div>
+    <div><img src="media/r8-audi.jpg" alt="Audi R8"><p>Audi R8 Spyder</p></div>
+  </section>
 
-/* Navigation */
-header, footer {
-  background-color: #0e241a;
-  padding: 1.5rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 F1DAN Luxury Concierge. All rights reserved.</p>
+  </footer>
 
-header img {
-  height: 50px;
-}
-
-nav a {
-  color: #e2ffe0;
-  margin-left: 20px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1rem;
-}
-
-nav a:hover {
-  color: #c0f5c7;
-}
-
-/* Hero Section */
-.hero {
-  background: url("hero.jpg") no-repeat center center/cover;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: relative;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.hero h1,
-.hero p {
-  position: relative;
-  z-index: 1;
-  color: #f2f2f2;
-}
-
-.hero h1 {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.25rem;
-}
-
-/* Gallery */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 3rem 2rem;
-  background: #091e16;
-}
-
-.gallery img {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Page Banner */
-.page-banner {
-  background-size: cover;
-  background-position: center;
-  padding: 5rem 2rem;
-  text-align: center;
-  color: #fff;
-}
-
-.banner-content h1 {
-  font-size: 2.8rem;
-  font-family: 'Poppins', sans-serif;
-  margin-bottom: 1rem;
-}
-
-.banner-content p {
-  font-size: 1.2rem;
-  font-family: 'Lato', sans-serif;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* Carousel Section */
-.carousel-container {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x mandatory;
-  white-space: nowrap;
-  scroll-behavior: smooth;
-  padding: 1rem 0;
-}
-
-.carousel {
-  display: flex;
-  gap: 1rem;
-  padding: 0 1rem;
-  scroll-snap-type: x mandatory;
-}
-
-.carousel-item {
-  display: inline-block;
-  scroll-snap-align: start;
-  background-color: #0e241a;
-  border-radius: 12px;
-  overflow: hidden;
-  text-align: center;
-  min-width: 250px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease;
-  text-decoration: none;
-}
-
-.carousel-item:hover {
-  transform: scale(1.05);
-}
-
-.carousel-item img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  display: block;
-}
-
-.carousel-item p {
-  color: #e2ffe0;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  padding: 0.75rem;
-  margin: 0;
-}
-
-/* Responsive Styling */
-@media (max-width: 600px) {
-  .carousel-item {
-    min-width: 85%;
-  }
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #0e241a;
-  font-size: 0.9rem;
-  color: #ccc;
-}
+</body>
+</html>
