@@ -1,132 +1,188 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Chauffeured Cars | F1DAN</title>
-  <link rel="icon" href="favicon.ico" />
-  <link rel="stylesheet" href="style.css" />
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@500;700&display=swap');
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+/* Base Settings */
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  background-color: #061913;
+  color: #f4f4f4;
+}
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Lato', sans-serif;
-      background-color: #061913;
-      color: #f4f4f4;
-    }
+/* Headers and Typography */
+h1, h2, h3, h4, h5, h6,
+.hero-content p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
 
-    h1, h2, h3 {
-      font-family: 'Poppins', sans-serif;
-    }
+nav a {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
 
-    header, footer {
-      background-color: #0e241a;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
+/* Navigation */
+header, footer {
+  background-color: #0e241a;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
-    header img {
-      height: 50px;
-    }
+header img {
+  height: 50px;
+}
 
-    nav a {
-      color: #e2ffe0;
-      margin-left: 15px;
-      text-decoration: none;
-      font-weight: 500;
-      font-family: 'Poppins', sans-serif;
-    }
+nav a {
+  color: #e2ffe0;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+}
 
-    nav a:hover {
-      color: #a0ffc2;
-    }
+nav a:hover {
+  color: #c0f5c7;
+}
 
-    .main-banner {
-      background: url('media/exotic1.jpg') center center/cover no-repeat;
-      height: 60vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      position: relative;
-    }
+/* Hero Section */
+.hero {
+  background: url("hero.jpg") no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
 
-    .main-banner::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0, 0, 0, 0.4);
-    }
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
-    .main-banner h1 {
-      position: relative;
-      z-index: 2;
-      font-size: 3rem;
-      color: #b6f5c2;
-    }
+.hero h1,
+.hero p {
+  position: relative;
+  z-index: 1;
+  color: #f2f2f2;
+}
 
-    .content {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 1rem;
-      font-size: 1.2rem;
-      line-height: 1.7;
-    }
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
 
-    ul li {
-      margin-bottom: 0.75rem;
-    }
+.hero p {
+  font-size: 1.25rem;
+}
 
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #0e241a;
-      color: #ccc;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <img src="logo.jpg" alt="F1DAN Logo">
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="chauffeured-cars.html">Chauffeured Cars</a>
-      <a href="music-video-cars.html">Music Video Cars</a>
-      <a href="tours.html">City Tours</a>
-      <a href="all-day-packages.html">All-Day Packages</a>
-      <a href="fleet.html">Fleet</a>
-      <a href="boats.html">Luxury Boats</a>
-      <a href="event-venues.html">Event Venues</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 3rem 2rem;
+  background: #091e16;
+}
 
-  <section class="main-banner">
-    <h1>Book Your Chauffeured Experience</h1>
-  </section>
+.gallery img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
 
-  <div class="content">
-    <p>
-      F1DAN offers an exclusive chauffeured service throughout Toronto and the GTA, ideal for upscale events, private nights out, and luxury transportation. Select from our fleet of black SUVs, exotic sedans, and prestige models. Bookings include an experienced driver and optional add-ons such as security, female chauffeurs, and photographers.
-    </p>
-    <ul>
-      <li>Black XL SUV w/ female chauffeur (available on request)</li>
-      <li>Add-ons: Security, Hostess, On-Board Photographer</li>
-      <li>Wine nights, girls’ nights, private events, red carpets</li>
-      <li>Hourly or Full-Day Packages</li>
-    </ul>
-  </div>
+/* Page Banner */
+.page-banner {
+  background-size: cover;
+  background-position: center;
+  padding: 5rem 2rem;
+  text-align: center;
+  color: #fff;
+}
 
-  <footer>
-    <p>&copy; 2025 F1DAN Luxury Concierge. All rights reserved.</p>
-  </footer>
-</body>
-</html>
+.banner-content h1 {
+  font-size: 2.8rem;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 1rem;
+}
+
+.banner-content p {
+  font-size: 1.2rem;
+  font-family: 'Lato', sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Carousel Section */
+.carousel-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  padding: 1rem 0;
+}
+
+.carousel {
+  display: flex;
+  gap: 1rem;
+  padding: 0 1rem;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel-item {
+  display: inline-block;
+  scroll-snap-align: start;
+  background-color: #0e241a;
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  min-width: 250px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+  text-decoration: none;
+}
+
+.carousel-item:hover {
+  transform: scale(1.05);
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.carousel-item p {
+  color: #e2ffe0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  padding: 0.75rem;
+  margin: 0;
+}
+
+/* Responsive Styling */
+@media (max-width: 600px) {
+  .carousel-item {
+    min-width: 85%;
+  }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #0e241a;
+  font-size: 0.9rem;
+  color: #ccc;
+}
