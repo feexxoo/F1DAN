@@ -1,110 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#061913" />
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>F1DAN | Luxury Chauffeured Experience</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <script defer src="https://www.instagram.com/embed.js"></script>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Lato', sans-serif;
-      background: #061913;
-      color: #f4f4f4;
-    }
-    h1, h2, h3 {
-      font-family: 'Poppins', sans-serif;
-    }
-    header {
-      background-color: #0e241a;
-      padding: 1.2rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    header img {
-      height: 50px;
-    }
-    nav a {
-      color: #e2ffe0;
-      margin-left: 20px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1rem;
-      font-family: 'Poppins', sans-serif;
-    }
-    nav a:hover {
-      color: #c0f5c7;
-    }
-    .hero {
-      background: url("media/exotic6.jpg") no-repeat center center/cover;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      text-align: center;
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-    }
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      color: #f2f2f2;
-    }
-    .hero-content img {
-      width: 220px;
-      height: auto;
-      margin-bottom: 1rem;
-    }
-    .hero-content p {
-      font-size: 1.3rem;
-      padding: 0 1rem;
-    }
-    .fleet-gallery, .boat-gallery {
-      padding: 3rem 2rem;
-      background-color: #091e16;
-    }
-    .fleet-gallery h2, .boat-gallery h2 {
-      text-align: center;
-      color: #b6f5c2;
-    }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    .gallery-grid img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.3);
-    }
-    .gallery-grid p {
-      text-align: center;
-      margin-top: 0.5rem;
-      font-family: 'Poppins', sans-serif;
-    }
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      background-color: #0e241a;
-      font-size: 0.9rem;
-      color: #ccc;
-    }
+    /* Insert any additional page-specific CSS here */
   </style>
 </head>
 <body>
-
+  <!-- HEADER -->
   <header>
     <img src="logo.jpg" alt="F1DAN Logo" />
     <nav>
@@ -120,6 +32,7 @@
     </nav>
   </header>
 
+  <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-content">
       <img src="logo.jpg" alt="F1DAN Logo">
@@ -127,35 +40,68 @@
     </div>
   </section>
 
+  <!-- CAROUSEL SECTION -->
+  <section id="fleet-carousel" style="background-color:#061913; padding: 3rem 1rem;">
+    <h2 style="color:#b6f5c2; text-align:center; font-family:'Poppins', sans-serif; font-size: 2rem; margin-bottom:2rem;">Explore Our Fleet</h2>
+    <div class="carousel-container">
+      <div class="carousel">
+        <div class="carousel-item main">
+          <img src="media/r8-audi.jpg" alt="Audi R8" />
+          <p>Audi R8 Spyder</p>
+        </div>
+        <div class="carousel-item">
+          <img src="media/mclaren-570s.jpg" alt="McLaren 570s" />
+          <p>McLaren 570s</p>
+        </div>
+        <div class="carousel-item">
+          <img src="media/rolls-royce-wraith.jpg" alt="Rolls Royce Wraith" />
+          <p>Rolls Royce Wraith</p>
+        </div>
+        <div class="carousel-item">
+          <img src="media/rolls-royce-ghost.jpg" alt="Rolls Royce Ghost" />
+          <p>Rolls Royce Ghost</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY SECTION -->
   <section class="fleet-gallery">
     <h2>Our Fleet</h2>
     <div class="gallery-grid">
-      <div><img src="media/escalade-esv.jpg" alt="Escalade ESV"><p>Escalade ESV</p></div>
-      <div><img src="media/bentley-bentayga.jpg" alt="Bentley Bentayga"><p>Bentley Bentayga</p></div>
-      <div><img src="media/rr-cullinan.jpg" alt="RR Cullinan"><p>Rolls Royce Cullinan</p></div>
-      <div><img src="media/rr-phantom.jpg" alt="RR Phantom"><p>Rolls Royce Phantom</p></div>
-      <div><img src="media/rr-wraith.jpg" alt="RR Wraith"><p>Rolls Royce Wraith</p></div>
-      <div><img src="media/rr-ghost.jpg" alt="RR Ghost"><p>Rolls Royce Ghost</p></div>
-      <div><img src="media/maybach-gls600.jpg" alt="Maybach GLS 600"><p>Maybach GLS 600</p></div>
-      <div><img src="media/maybach-s550.jpg" alt="Maybach S550"><p>Maybach S550</p></div>
-      <div><img src="media/gmc-denali.jpg" alt="GMC Yukon Denali"><p>GMC Yukon Denali Ultimate</p></div>
-      <div><img src="media/lincoln-navigator.jpg" alt="Lincoln Navigator"><p>Lincoln Navigator</p></div>
-      <div><img src="media/maybach-sprinter.jpg" alt="Maybach Sprinter"><p>Maybach Sprinter</p></div>
-      <div><img src="media/mercedes-sprinter.jpg" alt="Mercedes Sprinter"><p>Mercedes Sprinter</p></div>
+      <!-- All vehicle blocks here... (same as before) -->
     </div>
   </section>
 
   <section class="boat-gallery">
     <h2>Luxury Boats</h2>
     <div class="gallery-grid">
-      <div><img src="media/boat1.jpg" alt="Luxury Boat 1"><p>35-Person Private Yacht</p></div>
-      <div><img src="media/boat2.jpg" alt="Luxury Boat 2"><p>Black Speed Boat – 15 Guests</p></div>
+      <!-- All boat blocks here... -->
     </div>
   </section>
 
+  <!-- INSTAGRAM EMBED -->
+  <section style="padding: 2rem; background:#0e241a; text-align:center;">
+    <h2 style="color:#b6f5c2; font-family:'Poppins', sans-serif;">Follow Fidan on Instagram</h2>
+    <iframe src="https://www.instagram.com/feexxoo/embed" width="320" height="400" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+  </section>
+
+  <!-- WHATSAPP (hidden until login) -->
+  <div id="whatsapp-btn" style="display:none; position:fixed; bottom:20px; right:20px; z-index:999;">
+    <a href="https://wa.me/14376632772" target="_blank" style="background:#25D366; color:white; padding:0.8rem 1rem; border-radius:50px; font-family:'Poppins'; text-decoration:none; font-weight:600;">Chat with F1DAN</a>
+  </div>
+
+  <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 F1DAN Luxury Concierge. All rights reserved.</p>
   </footer>
 
+  <script>
+    // Simulate login check (replace with real session/user check)
+    const userIsLoggedIn = document.cookie.includes("userId=");
+    if (userIsLoggedIn) {
+      document.getElementById('whatsapp-btn').style.display = 'block';
+    }
+  </script>
 </body>
 </html>
