@@ -39,7 +39,7 @@
 
   <section class="hero" style="background: url('media/hero.png') no-repeat center center / cover; height: 100vh; display: flex; align-items: center; justify-content: center;">
     <div class="hero-content">
-      <p style="font-size: 1.5rem; font-weight: 500; color: white;">Unparalleled Luxury. Curated Experiences. Ultimate Prestige.</p>
+      <p style="font-size: 1.5rem; font-weight: 500; color: white; text-shadow: none;">Unparalleled Luxury. Curated Experiences. Ultimate Prestige.</p>
     </div>
   </section>
 
@@ -48,6 +48,7 @@
     <div class="carousel-container">
       <button class="carousel-prev">&#8249;</button>
       <div class="carousel">
+        <!-- Fleet vehicle cards here -->
         <div class="carousel-item"><img src="media/r8-audi.jpg" alt="Audi R8"><p>Audi R8</p></div>
         <div class="carousel-item"><img src="media/mclaren-570s.jpg" alt="McLaren 570s"><p>McLaren 570s</p></div>
         <div class="carousel-item"><img src="media/rolls-royce-wraith.jpg" alt="Rolls Royce Wraith"><p>Rolls Royce Wraith</p></div>
@@ -67,20 +68,20 @@
     </div>
   </section>
 
-  <section class="packages">
-    <div class="package-box">
-      <h3>🎁 Birthday Experience</h3>
-      <p>Includes luxury vehicle pickup, flowers, gift box, celebration playlist, and optional red carpet.</p>
+  <section class="packages" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; background-color: #091e16; padding: 4rem 1.5rem;">
+    <div class="package-box" style="background: #122b20; border: 1px solid #b6f5c2; padding: 2.5rem; border-radius: 16px; color: #e2ffe0; max-width: 320px; box-shadow: 0 8px 18px rgba(0,0,0,0.4); transition: transform 0.3s ease;">
+      <h3 style="font-family:'Poppins'; font-size: 1.5rem; margin-bottom: 1rem;">Birthday Experience</h3>
+      <p style="font-family:'Lato'; line-height: 1.6;">Luxury vehicle pickup, fresh florals, curated gift box, custom celebration playlist, and optional red carpet entrance.</p>
     </div>
-    <div class="package-box">
-      <h3>🗺️ 2-Hour City Group Ride</h3>
-      <p>Perfect for drop-offs and pickups, scenic drives, and premium group transportation with onboard ambiance.</p>
+    <div class="package-box" style="background: #122b20; border: 1px solid #b6f5c2; padding: 2.5rem; border-radius: 16px; color: #e2ffe0; max-width: 320px; box-shadow: 0 8px 18px rgba(0,0,0,0.4); transition: transform 0.3s ease;">
+      <h3 style="font-family:'Poppins'; font-size: 1.5rem; margin-bottom: 1rem;">2-Hour City Group Ride</h3>
+      <p style="font-family:'Lato'; line-height: 1.6;">Drop-off & pick-up in premium SUV or Sprinter. Cruise through the city with ambiance, music, and top-tier hosting.</p>
     </div>
-    <div class="package-box">
-      <h3>🎉 6-Hour Group Tour</h3>
-      <p>Includes landmark stops, VIP dining, photo sessions, and a F1DAN-exclusive itinerary curated just for your group.</p>
+    <div class="package-box" style="background: #122b20; border: 1px solid #b6f5c2; padding: 2.5rem; border-radius: 16px; color: #e2ffe0; max-width: 320px; box-shadow: 0 8px 18px rgba(0,0,0,0.4); transition: transform 0.3s ease;">
+      <h3 style="font-family:'Poppins'; font-size: 1.5rem; margin-bottom: 1rem;">6-Hour Curated Group Tour</h3>
+      <p style="font-family:'Lato'; line-height: 1.6;">Stops at Toronto's most iconic venues, waterfront photo sessions, optional VIP dining, and a curated F1DAN itinerary.</p>
     </div>
-  </section>
+  </section>  
 
   <section style="padding: 3rem 2rem; background-color: #091e16; text-align:center;">
     <h2 style="color:#b6f5c2; font-family:'Poppins'; font-size: 2rem;">Why Choose F1DAN</h2>
@@ -90,17 +91,25 @@
     <p style="color:#b6f5c2; font-family:'Poppins'; font-weight: 500;">Optional Add-on: Professional Cameraman Available to Document Your Night Out</p>
   </section>
 
+  <section style="padding: 3rem 2rem; background:#0e241a; text-align:center;">
+    <h2 style="color:#b6f5c2; font-family:'Poppins', sans-serif;">@feexxoo Instagram</h2>
+    <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem; padding-top: 1rem;">
+      <img src="media/insta1.jpg" alt="Instagram 1">
+      <img src="media/insta2.jpg" alt="Instagram 2">
+      <img src="media/insta3.jpg" alt="Instagram 3">
+      <!-- Add 15 more as needed -->
+    </div>
+  </section>
+
   <footer>
     <p>&copy; 2025 F1DAN Luxury Concierge. All rights reserved.</p>
   </footer>
 
   <script>
-    // Carousel arrow logic
     const carousel = document.querySelector('.carousel');
     document.querySelector('.carousel-prev').onclick = () => carousel.scrollBy({ left: -300, behavior: 'smooth' });
     document.querySelector('.carousel-next').onclick = () => carousel.scrollBy({ left: 300, behavior: 'smooth' });
 
-    // Email popup logic
     window.addEventListener('load', () => {
       if (!sessionStorage.getItem('emailShown')) {
         document.getElementById('email-popup').style.display = 'flex';
