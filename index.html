@@ -215,7 +215,50 @@
   <footer>
     <p>&copy; 2025 F1DAN Luxury Concierge. All rights reserved.</p>
   </footer>
-
+  <script>
+    const carousel = document.querySelector('.carousel');
+    let isDown = false;
+    let startX, scrollLeft;
+  
+    // Mouse drag (desktop)
+    carousel.addEventListener('mousedown', (e) => {
+      isDown = true;
+      carousel.classList.add('active');
+      startX = e.pageX - carousel.offsetLeft;
+      scrollLeft = carousel.scrollLeft;
+    });
+  
+    carousel.addEventListener('mouseleave', () => {
+      isDown = false;
+      carousel.classList.remove('active');
+    });
+  
+    carousel.addEventListener('mouseup', () => {
+      isDown = false;
+      carousel.classList.remove('active');
+    });
+  
+    carousel.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - carousel.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      carousel.scrollLeft = scrollLeft - walk;
+    });
+  
+    // Touch swipe (mobile)
+    carousel.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].pageX;
+      scrollLeft = carousel.scrollLeft;
+    });
+  
+    carousel.addEventListener('touchmove', (e) => {
+      const x = e.touches[0].pageX;
+      const walk = (x - startX) * 1.5;
+      carousel.scrollLeft = scrollLeft - walk;
+    });
+  </script>
+  
   <script>
     // Simulate login check (replace with real session/user check)
     const userIsLoggedIn = document.cookie.includes("userId=");
