@@ -10,6 +10,55 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    .carousel {
+      display: flex;
+      gap: 1rem;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      min-width: 100%;
+      overflow-x: auto;
+    }
+    .carousel-container {
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      display: flex;
+      justify-content: center;
+      max-width: 100%;
+      margin: 0 auto;
+      padding-bottom: 2rem;
+    }
+    .carousel-item {
+      scroll-snap-align: center;
+      background-color: #0e241a;
+      border-radius: 12px;
+      overflow: hidden;
+      text-align: center;
+      min-width: 250px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease;
+    }
+    .carousel-item:hover {
+      transform: scale(1.05);
+    }
+    .carousel-item img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+    .carousel-item p {
+      color: #e2ffe0;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      padding: 0.75rem;
+      margin: 0;
+    }
+    @media (max-width: 600px) {
+      .carousel-item {
+        min-width: 85%;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -27,9 +76,10 @@
     </nav>
   </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <p>Welcome to F1DAN — Toronto’s premier luxury concierge. Experience elevated living through exclusive chauffeur service, curated experiences, and unforgettable moments.</p>
+  <section class="hero" style="background: url('media/hero.png') no-repeat center center/cover; height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative;">
+    <div style="background: rgba(0,0,0,0.5); padding: 2rem; border-radius: 12px;">
+      <h1 style="color: #b6f5c2; font-size: 2.8rem; font-family: 'Poppins', sans-serif;">Unparalleled Luxury. Unmatched Experience.</h1>
+      <p style="font-size: 1.2rem; color: #f4f4f4; font-family: 'Lato', sans-serif;">F1DAN provides elite-level transportation, bespoke experiences, and high-profile client services across Toronto and beyond.</p>
     </div>
   </section>
 
@@ -37,36 +87,34 @@
     <h2 style="color:#b6f5c2; text-align:center; font-family:'Poppins', sans-serif; font-size: 2rem; margin-bottom:2rem;">Explore Our Fleet</h2>
     <div class="carousel-container">
       <div class="carousel">
-        <div class="carousel-item">
-          <img src="media/r8-audi.jpg" alt="Audi R8">
-          <p>Audi R8 Spyder</p>
-        </div>
-        <div class="carousel-item">
-          <img src="media/mclaren-570s.jpg" alt="McLaren 570s">
-          <p>McLaren 570s</p>
-        </div>
-        <div class="carousel-item">
-          <img src="media/rolls-royce-wraith.jpg" alt="Rolls Royce Wraith">
-          <p>Rolls Royce Wraith</p>
-        </div>
-        <div class="carousel-item">
-          <img src="media/rolls-royce-ghost.jpg" alt="Rolls Royce Ghost">
-          <p>Rolls Royce Ghost</p>
-        </div>
+        <div class="carousel-item"><img src="media/r8-audi.jpg" alt="Audi R8"><p>Audi R8 Spyder</p></div>
+        <div class="carousel-item"><img src="media/mclaren-570s.jpg" alt="McLaren 570s"><p>McLaren 570s</p></div>
+        <div class="carousel-item"><img src="media/rolls-royce-wraith.jpg" alt="Rolls Royce Wraith"><p>Rolls Royce Wraith</p></div>
+        <div class="carousel-item"><img src="media/rolls-royce-ghost.jpg" alt="Rolls Royce Ghost"><p>Rolls Royce Ghost</p></div>
+        <div class="carousel-item"><img src="media/escalade-esv.jpg" alt="Escalade ESV"><p>Escalade ESV</p></div>
+        <div class="carousel-item"><img src="media/bentley-bentayga.jpg" alt="Bentley Bentayga"><p>Bentley Bentayga</p></div>
+        <div class="carousel-item"><img src="media/rr-cullinan.jpg" alt="Cullinan"><p>Rolls Royce Cullinan</p></div>
+        <div class="carousel-item"><img src="media/rr-phantom.jpg" alt="Phantom"><p>Rolls Royce Phantom</p></div>
+        <div class="carousel-item"><img src="media/maybach-gls600.jpg" alt="Maybach GLS 600"><p>Maybach GLS 600</p></div>
+        <div class="carousel-item"><img src="media/maybach-s550.jpg" alt="Maybach S550"><p>Maybach S550</p></div>
+        <div class="carousel-item"><img src="media/gmc-denali.jpg" alt="Yukon Denali"><p>GMC Yukon Denali Ultimate</p></div>
+        <div class="carousel-item"><img src="media/lincoln-navigator.jpg" alt="Navigator"><p>Lincoln Navigator</p></div>
+        <div class="carousel-item"><img src="media/maybach-sprinter.jpg" alt="Maybach Sprinter"><p>Maybach Sprinter</p></div>
+        <div class="carousel-item"><img src="media/mercedes-sprinter.jpg" alt="Mercedes Sprinter"><p>Mercedes Sprinter</p></div>
       </div>
     </div>
   </section>
 
-  <section style="padding: 2rem; background:#0e241a; text-align:center;">
+  <section style="background-color:#0e241a; padding: 3rem 1rem; text-align:center;">
     <h2 style="color:#b6f5c2; font-family:'Poppins', sans-serif;">Follow Fidan on Instagram</h2>
-    <iframe src="https://www.instagram.com/feexxoo/embed" width="320" height="400" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+    <iframe src="https://www.instagram.com/feexxoo/embed" width="100%" height="420" frameborder="0" scrolling="no" allowtransparency="true" style="max-width: 320px; margin: auto;"></iframe>
   </section>
 
   <div id="whatsapp-btn" style="display:none; position:fixed; bottom:20px; right:20px; z-index:999;">
     <a href="https://wa.me/14376632772" target="_blank" style="background:#25D366; color:white; padding:0.8rem 1rem; border-radius:50px; font-family:'Poppins'; text-decoration:none; font-weight:600;">Chat with F1DAN</a>
   </div>
 
-  <footer>
+  <footer style="text-align:center; padding: 1.5rem; background-color: #0e241a; font-size: 0.9rem; color: #ccc;">
     <p>&copy; 2025 F1DAN Luxury Concierge. All rights reserved.</p>
   </footer>
 
@@ -101,9 +149,7 @@
         carousel.scrollLeft = scrollLeft - walk;
       });
     });
-  </script>
 
-  <script>
     const userIsLoggedIn = document.cookie.includes("userId=");
     if (userIsLoggedIn) {
       document.getElementById('whatsapp-btn').style.display = 'block';
