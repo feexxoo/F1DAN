@@ -3,18 +3,127 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>F1DAN | Chauffeured Cars</title>
+  <title>F1DAN | Chauffeured Services</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Lato', sans-serif;
+      background: #061913;
+      color: #f4f4f4;
+    }
+    header {
+      background-color: #0e241a;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header img {
+      height: 50px;
+    }
+    nav a {
+      color: #e2ffe0;
+      margin-left: 20px;
+      text-decoration: none;
+      font-family: 'Poppins', sans-serif;
+    }
+    nav a:hover {
+      color: #c0f5c7;
+    }
+    .page-banner {
+      background: url('media/exotic6.jpg') no-repeat center center/cover;
+      height: 65vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .page-banner::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    .banner-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+    .banner-content h1 {
+      font-size: 3rem;
+      font-family: 'Poppins', sans-serif;
+      color: #adefc1;
+    }
+    .intro-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 3rem 2rem;
+      gap: 3rem;
+    }
+    .intro-section div {
+      flex: 1;
+      min-width: 300px;
+    }
+    .intro-section h2 {
+      font-family: 'Poppins', sans-serif;
+      color: #c0f5c7;
+    }
+    .intro-section ul {
+      list-style-type: disc;
+      padding-left: 1.2rem;
+    }
+    .inquire-button {
+      display: block;
+      width: 100%;
+      background-color: #d5a85d;
+      color: #061913;
+      text-align: center;
+      font-size: 1.4rem;
+      font-weight: bold;
+      padding: 1.2rem;
+      border-radius: 8px;
+      margin: 3rem auto;
+      text-decoration: none;
+      max-width: 95%;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+    .gallery div {
+      text-align: center;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+    .gallery p {
+      margin-top: 0.5rem;
+      font-family: 'Poppins', sans-serif;
+    }
+    footer {
+      background-color: #0e241a;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- HEADER -->
   <header>
     <img src="logo.jpg" alt="F1DAN Logo" />
     <nav>
       <a href="index.html">Home</a>
-      <a href="chauffeured-cars.html">Chauffeured Cars</a>
-      <a href="music-video-cars.html">Music Video Cars</a>
+      <a href="chauffeured-cars.html">Chauffeured Services</a>
+      <a href="music-video-cars.html">Music Videos & Photoshoots</a>
       <a href="tours.html">City Tours</a>
       <a href="all-day-packages.html">All-Day Packages</a>
       <a href="fleet.html">Fleet</a>
@@ -24,28 +133,55 @@
     </nav>
   </header>
 
-  <!-- BANNER SECTION -->
-  <section class="page-banner" style="background-image:url('media/exotic6.jpg');">
+  <section class="page-banner">
     <div class="banner-content">
-      <h1>Chauffeured Cars</h1>
-      <p>Arrive in unmatched luxury. F1DAN offers professionally chauffeured black XL SUVs, Maybachs, Rolls Royce, and exotic vehicles for every occasion.</p>
+      <h1>Chauffeured Services</h1>
     </div>
   </section>
 
-  <!-- GALLERY SECTION -->
+  <section class="intro-section">
+    <div>
+      <h2>Ultra-Luxury Chauffeured Services</h2>
+      <p>Arrive in style with F1DAN’s professional chauffeured services. Offering premium vehicles with optional staffing, we tailor every ride to perfection.</p>
+      <ul>
+        <li>Hourly, Daily, Weekly & Monthly Bookings</li>
+        <li>Black XL SUVs, Maybachs, Rolls Royce & more</li>
+        <li>Optional Drivers, Security, Police Escorts</li>
+        <li>VIP Event Transport & Red Carpet Setups</li>
+        <li>All Vehicles Insured & Licensed</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Popular Ride Options</h2>
+      <ul>
+        <li>Airport Transfers</li>
+        <li>Night Out Luxury Rides</li>
+        <li>VIP Guest Pickups</li>
+        <li>Business & Meeting Chauffeur</li>
+        <li>Venue & Event Drop-offs</li>
+        <li>Custom Drives & Private Excursions</li>
+      </ul>
+    </div>
+  </section>
+
+  <a class="inquire-button" href="inquire.html">INQUIRE TO BOOK YOUR EXPERIENCE</a>
+
   <section class="gallery">
     <div><img src="media/escalade-esv.jpg" alt="Escalade ESV"><p>Escalade ESV</p></div>
     <div><img src="media/maybach-gls600.jpg" alt="Maybach GLS 600"><p>Maybach GLS 600</p></div>
     <div><img src="media/maybach-s550.jpg" alt="Maybach S550"><p>Maybach S550</p></div>
-    <div><img src="media/rr-cullinan.jpg" alt="Rolls Royce Cullinan"><p>Rolls Royce Cullinan</p></div>
-    <div><img src="media/rr-phantom.jpg" alt="Rolls Royce Phantom"><p>Rolls Royce Phantom</p></div>
-    <div><img src="media/rr-wraith.jpg" alt="Rolls Royce Wraith"><p>Rolls Royce Wraith</p></div>
-    <div><img src="media/rr-ghost.jpg" alt="Rolls Royce Ghost"><p>Rolls Royce Ghost</p></div>
+    <div><img src="media/rolls-royce-cullinan.jpg" alt="Rolls Royce Cullinan"><p>Rolls Royce Cullinan</p></div>
+    <div><img src="media/rolls-royce-phantom.jpg" alt="Rolls Royce Phantom"><p>Rolls Royce Phantom</p></div>
+    <div><img src="media/rolls-royce-wraith.jpg" alt="Rolls Royce Wraith"><p>Rolls Royce Wraith</p></div>
+    <div><img src="media/rolls-royce-ghost.jpg" alt="Rolls Royce Ghost"><p>Rolls Royce Ghost</p></div>
+    <div><img src="media/lincoln-navigator.jpg" alt="Lincoln Navigator"><p>Lincoln Navigator</p></div>
+    <div><img src="media/gmc-denali.jpg" alt="GMC Yukon Denali XL"><p>GMC Yukon Denali XL</p></div>
+    <div><img src="media/maybach-sprinter.jpg" alt="Maybach Sprinter"><p>Maybach Sprinter</p></div>
+    <div><img src="media/mercedes-sprinter.jpg" alt="Mercedes Sprinter"><p>Mercedes Sprinter</p></div>
     <div><img src="media/mclaren-570s.jpg" alt="McLaren 570s"><p>McLaren 570s</p></div>
-    <div><img src="media/r8-audi.jpg" alt="Audi R8"><p>Audi R8 Spyder</p></div>
+    <div><img src="media/r8-audi.jpg" alt="Audi R8 Spyder"><p>Audi R8 Spyder</p></div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 F1DAN Luxury Concierge. All rights reserved.</p>
   </footer>
