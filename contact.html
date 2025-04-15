@@ -36,18 +36,19 @@
       color: #b2ffc0;
     }
     .container {
-      max-width: 600px;
+      max-width: 700px;
       margin: 3rem auto;
       background: #0e241a;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      padding: 2.5rem;
+      border-radius: 14px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.4);
     }
     h1 {
       text-align: center;
       color: #b6f5c2;
       margin-bottom: 2rem;
       font-family: 'Playfair Display', serif;
+      font-size: 2rem;
     }
     label {
       color: #f4f4f4;
@@ -55,14 +56,14 @@
       margin-bottom: 0.5rem;
       font-weight: 500;
     }
-    input, textarea {
+    input, select, textarea {
       width: 100%;
       padding: 0.85rem;
-      border-radius: 8px;
+      border-radius: 10px;
       border: none;
       background: #1b3c2d;
       color: #fff;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.4rem;
       font-size: 1rem;
       font-family: 'Poppins', sans-serif;
     }
@@ -78,7 +79,7 @@
       font-weight: bold;
       font-size: 1rem;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
     }
     button:hover {
@@ -90,9 +91,25 @@
       font-size: 0.9rem;
       color: #ccc;
     }
+    .disclaimer {
+      font-size: 0.95rem;
+      color: #bbb;
+      margin-top: -0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .checkbox {
+      display: flex;
+      align-items: center;
+      color: #f4f4f4;
+      font-size: 0.95rem;
+    }
+    .checkbox input {
+      margin-right: 10px;
+    }
   </style>
 </head>
 <body>
+
   <header>
     <img src="logo.jpg" alt="F1DAN Logo" />
     <nav>
@@ -108,24 +125,71 @@
   </header>
 
   <main class="container">
-    <h1>Contact F1DAN Concierge</h1>
-    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="contact" />
-      <p hidden>
-        <label>Don’t fill this out: <input name="bot-field" /></label>
-      </p>
+    <h1>Begin Your Booking with F1DAN</h1>
+    <form name="contact" method="POST" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contact">
+      <p hidden><label>Don’t fill this out: <input name="bot-field"></label></p>
+
       <label>Full Name</label>
-      <input type="text" name="name" required />
-      <label>Email</label>
+      <input type="text" name="fullname" required />
+
+      <label>Date of Birth</label>
+      <input type="date" name="birthdate" required />
+
+      <label>Email Address</label>
       <input type="email" name="email" required />
-      <label>Message</label>
-      <textarea name="message" required></textarea>
-      <button type="submit">Send Inquiry</button>
+
+      <label>Phone Number</label>
+      <input type="tel" name="phone" required />
+
+      <label>Full Address</label>
+      <input type="text" name="address" required />
+
+      <label>Desired Booking Date</label>
+      <input type="date" name="booking_date" required />
+
+      <label>Pickup Time</label>
+      <input type="time" name="pickup_time" required />
+
+      <label>Number of Guests</label>
+      <input type="number" name="guests" min="1" max="30" required />
+
+      <label>Occasion</label>
+      <select name="occasion" required>
+        <option value="">Select an occasion</option>
+        <option>Birthday</option>
+        <option>Bachelorette</option>
+        <option>Corporate</option>
+        <option>Girls Night</option>
+        <option>Wedding</option>
+        <option>Tour</option>
+        <option>Music Video / Shoot</option>
+        <option>Other</option>
+      </select>
+
+      <label>Upload Government-Issued ID (Front)</label>
+      <input type="file" name="id_front" accept="image/*,.pdf" required />
+
+      <label>Upload Government-Issued ID (Back)</label>
+      <input type="file" name="id_back" accept="image/*,.pdf" required />
+
+      <label>Notes or Special Requests</label>
+      <textarea name="notes" placeholder="Let us know how to elevate your experience..."></textarea>
+
+      <p class="disclaimer">⚠️ A <strong style="color:#d5a85d;">$250 clean-up fee</strong> may apply for smoking, spills, or any damage caused during service.</p>
+
+      <label class="checkbox">
+        <input type="checkbox" required />
+        I agree to the terms and conditions, cancellation policy, and understand ID verification is required.
+      </label>
+
+      <button type="submit">Submit Booking Request</button>
     </form>    
   </main>
 
   <footer>
     <p>&copy; 2025 F1DAN Luxury Concierge. All rights reserved.</p>
   </footer>
+
 </body>
 </html>
