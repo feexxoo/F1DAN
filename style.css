@@ -169,3 +169,7 @@ header {
 .header-right a:hover {
   color: #c0f5c7;
 }
+.header-left img {
+  width: 150px;
+  height: auto;
+}
