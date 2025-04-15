@@ -1,93 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Vehicle Inquiry | F1DAN</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta http-equiv="refresh" content="0; url=contact.html" />
+  <title>Redirecting to Contact Form | F1DAN</title>
   <style>
     body {
       background-color: #061913;
-      color: #e2ffe0;
-      font-family: 'Poppins', sans-serif;
-      padding: 2rem;
-    }
-
-    h2 {
-      text-align: center;
       color: #b6f5c2;
-      margin-bottom: 2rem;
-    }
-
-    form {
-      max-width: 500px;
-      margin: 0 auto;
-      background: #0e241a;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.4);
-    }
-
-    label {
-      display: block;
-      margin: 1rem 0 0.4rem;
-      font-weight: 600;
-    }
-
-    input, select {
-      width: 100%;
-      padding: 0.75rem;
-      border: none;
-      border-radius: 8px;
-      background: #1b3c2d;
-      color: #fff;
-      font-size: 1rem;
-    }
-
-    button {
-      margin-top: 1.5rem;
-      width: 100%;
-      padding: 0.85rem;
-      border: none;
-      border-radius: 8px;
-      background: #b6f5c2;
-      color: #061913;
-      font-weight: bold;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #9debb0;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      padding-top: 4rem;
     }
   </style>
 </head>
 <body>
-
-  <h2>Book Your Ride: <span id="car-name">...</span></h2>
-
-  <form>
-    <label for="date">Select Date</label>
-    <input type="date" id="date" name="date" required>
-
-    <label for="people">How many people?</label>
-    <input type="number" id="people" name="people" min="1" max="30" required>
-
-    <label for="time">Select Time</label>
-    <select id="time" name="time" required>
-      <option value="Morning">Morning (8AM–12PM)</option>
-      <option value="Afternoon">Afternoon (12PM–4PM)</option>
-      <option value="Evening">Evening (4PM–8PM)</option>
-      <option value="Full Day">Full Day</option>
-    </select>
-
-    <button type="submit">Submit Inquiry</button>
-  </form>
-
-  <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const car = urlParams.get('car');
-    document.getElementById('car-name').textContent = car || 'Luxury Vehicle';
-  </script>
-
+  <h1>Redirecting to Contact Form...</h1>
+  <p>If you are not redirected, <a href="contact.html" style="color:#d5a85d;">click here</a>.</p>
 </body>
 </html>
