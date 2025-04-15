@@ -84,9 +84,26 @@
       padding: 2rem;
     }
     .gallery img {
-      width: 300px;
       border-radius: 12px;
       box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    }
+    .gallery img:nth-child(1),
+    .gallery img:nth-child(2),
+    .gallery img:nth-child(3) {
+      width: 100%;
+      max-width: 100%;
+    }
+    .gallery img:nth-child(4),
+    .gallery img:nth-child(5) {
+      width: 48%;
+      max-width: 48%;
+    }
+    @media (max-width: 768px) {
+      .gallery img:nth-child(4),
+      .gallery img:nth-child(5) {
+        width: 100%;
+        max-width: 100%;
+      }
     }
   </style>
 </head>
