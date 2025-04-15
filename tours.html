@@ -24,7 +24,7 @@
       margin-top: 2rem;
     }
     h2 {
-      font-size: 2rem;
+      font-size: 1.6rem;
       color: #d5a85d;
       margin-bottom: 1rem;
     }
@@ -59,20 +59,29 @@
       border-radius: 12px;
       box-shadow: 0 0 20px rgba(0,0,0,0.4);
     }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
     .section {
       background: #0e241a;
       border-radius: 16px;
       padding: 2rem;
-      margin: 2rem auto;
-      max-width: 900px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      text-align: left;
     }
+
     .section p {
-      font-size: 1.1rem;
-      line-height: 1.8;
+      font-size: 1rem;
+      line-height: 1.7;
       font-family: 'Poppins', sans-serif;
       color: #f4f4f4;
     }
+
     .gold-btn {
       display: inline-block;
       background-color: #d5a85d;
@@ -86,10 +95,12 @@
       transition: all 0.3s ease;
       box-shadow: 0 4px 15px rgba(213, 168, 93, 0.3);
     }
+
     .gold-btn:hover {
       background-color: #e6c57a;
       box-shadow: 0 6px 25px rgba(213, 168, 93, 0.5);
     }
+
     footer {
       text-align: center;
       padding: 1rem;
@@ -118,38 +129,41 @@
     <h1 class="page-title">Toronto Luxury Tours</h1>
     <img src="media/exotic2.jpg" alt="Luxury Tour Experience">
 
-    <div class="section">
-      <h2>City Tours</h2>
-      <p>Explore Toronto through the lens of luxury. Our signature city tours include chauffeur-driven black XL SUVs, a dedicated host, and a curated itinerary of iconic landmarks, boutiques, skyline views, and cultural gems. Every moment is styled and elevated for a flawless experience.</p>
-      <p><strong>Includes:</strong> Chauffeur, host, refreshments, customized stops, and cinematic documentation options.</p>
-      <a href="contact.html" class="gold-btn">Contact to Book</a>
-    </div>
+    <div class="grid-container">
+      <div class="section">
+        <h2>City Tours</h2>
+        <p>Explore Toronto through the lens of luxury. Our signature city tours include chauffeur-driven black XL SUVs, a dedicated host, and a curated itinerary of iconic landmarks, boutiques, skyline views, and cultural gems. Every moment is styled and elevated for a flawless experience.</p>
+        <p><strong>Includes:</strong> Chauffeur, host, refreshments, customized stops, and cinematic documentation options.</p>
+        <a href="contact.html" class="gold-btn">Contact to Book</a>
+      </div>
 
-    <div class="section">
-      <h2>Winery Tours</h2>
-      <p>Embark on a luxurious escape through Ontario’s finest vineyards. Our winery tours offer private, chauffeured travel to prestigious estates, with options for exclusive tastings, gourmet pairings, and tranquil views — all curated with elegance in mind.</p>
-      <p><strong>Includes:</strong> Luxury transport, private reservations, charcuterie, vineyard itinerary planning, and photography add-ons.</p>
-      <a href="contact.html" class="gold-btn">Contact to Book</a>
-    </div>
+      <div class="section">
+        <h2>Winery Tours</h2>
+        <p>Embark on a luxurious escape through Ontario’s finest vineyards. Our winery tours offer private, chauffeured travel to prestigious estates, with options for exclusive tastings, gourmet pairings, and tranquil views — all curated with elegance in mind.</p>
+        <p><strong>Includes:</strong> Luxury transport, private reservations, charcuterie, vineyard itinerary planning, and photography add-ons.</p>
+        <a href="contact.html" class="gold-btn">Contact to Book</a>
+      </div>
 
-    <div class="section">
-      <h2>Top Places to Eat</h2>
-      <p>Begin with a picturesque café, continue with elegant dining, cocktails with a view, and finish with curated dessert — all in one luxury tour. With a personal chauffeur and itinerary arranged by F1DAN, you experience the city's culinary elite like royalty.</p>
-      <p><strong>Includes:</strong> Chauffeured evening (4–6 hours), suggested itinerary & reservations, host (optional), and photo or video enhancements.</p>
-      <a href="contact.html" class="gold-btn">Contact to Book</a>
-    </div>
+      <div class="section">
+        <h2>Top Places to Eat</h2>
+        <p>Begin with a picturesque café, continue with elegant dining, cocktails with a view, and finish with curated dessert — all in one luxury tour. With a personal chauffeur and itinerary arranged by F1DAN, you experience the city's culinary elite like royalty.</p>
+        <p><strong>Includes:</strong> Chauffeured evening (4–6 hours), suggested itinerary & reservations, host (optional), and photo or video enhancements.</p>
+        <a href="contact.html" class="gold-btn">Contact to Book</a>
+      </div>
 
-    <div class="section">
-      <h2>Private Tours</h2>
-      <p>Whether it's a high-profile occasion, private romantic experience, or exclusive city discovery, F1DAN’s private tours are fully customizable and exceptionally discreet. Let us handle every detail while you enjoy a world-class journey.</p>
-      <p><strong>Includes:</strong> Any luxury vehicle from our fleet, optional host, floral or gift arrangements, custom routes, and creative media services.</p>
-      <a href="contact.html" class="gold-btn">Contact to Book</a>
+      <div class="section">
+        <h2>Private Tours</h2>
+        <p>Whether it's a high-profile occasion, private romantic experience, or exclusive city discovery, F1DAN’s private tours are fully customizable and exceptionally discreet. Let us handle every detail while you enjoy a world-class journey.</p>
+        <p><strong>Includes:</strong> Any luxury vehicle from our fleet, optional host, floral or gift arrangements, custom routes, and creative media services.</p>
+        <a href="contact.html" class="gold-btn">Contact to Book</a>
+      </div>
     </div>
   </main>
 
   <footer>
     <p>&copy; 2025 F1DAN Luxury Concierge</p>
   </footer>
+
   <script>
     window.onload = () => {
       document.querySelectorAll("img:not(header img)").forEach(img => {
@@ -159,6 +173,5 @@
       });
     };
   </script>
-  
 </body>
 </html>
