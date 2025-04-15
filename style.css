@@ -141,3 +141,31 @@ footer {
     min-width: 85%;
   }
 }
+header {
+  background-color: #0e241a;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.header-left img {
+  height: 50px;
+}
+
+.header-right {
+  margin-left: auto;
+}
+
+.header-right a {
+  color: #e2ffe0;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+}
+
+.header-right a:hover {
+  color: #c0f5c7;
+}
