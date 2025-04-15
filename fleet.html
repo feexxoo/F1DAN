@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Our Fleet | F1DAN</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luxury Boat Rentals | F1DAN</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="favicon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -14,177 +14,167 @@
       background-color: #061913;
       color: #f4f4f4;
     }
-
-    h1 {
-      font-family: 'Poppins', sans-serif;
-      text-align: center;
-      margin-top: 2rem;
-    }
-
-    .fleet-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem;
-      padding: 3rem 2rem;
-    }
-
-    .fleet-item {
-      background-color: #0e241a;
-      border-radius: 12px;
-      height: 160px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.1rem;
-      color: #b6f5c2;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    }
-
     header, footer {
       background-color: #0e241a;
       padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
+      text-align: center;
     }
-
     nav a {
       color: #e2ffe0;
-      margin-left: 15px;
+      margin: 0 15px;
       text-decoration: none;
-      font-weight: 500;
       font-family: 'Poppins', sans-serif;
     }
-
-    nav a:hover {
-      color: #a0ffc2;
-    }
-
-    footer {
+    .page-banner {
+      padding: 4rem 2rem;
       text-align: center;
-      padding: 1rem;
-      font-size: 0.85rem;
-      color: #aaa;
+      color: #fff;
+    }
+    .banner-content h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.8rem;
+      color: #b6f5c2;
+    }
+    .banner-content p {
+      max-width: 700px;
+      margin: 1rem auto;
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+    .section-box {
+      background-color: #0e241a;
+      border: 1px solid #d5a85d;
+      border-radius: 12px;
+      margin: 2rem auto;
+      padding: 2rem;
+      max-width: 900px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    }
+    .section-box h2 {
+      color: #d5a85d;
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 1rem;
+    }
+    .section-box p, .section-box ul {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #f4f4f4;
+    }
+    .section-box ul {
+      padding-left: 1.2rem;
+    }
+    .inquire-btn {
+      display: block;
+      margin: 2rem auto;
+      background-color: #d5a85d;
+      color: #061913;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      border-radius: 40px;
+      text-decoration: none;
+      text-align: center;
+      width: fit-content;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      padding: 2rem;
+    }
+    .gallery img {
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    }
+    .gallery img:nth-child(1),
+    .gallery img:nth-child(2),
+    .gallery img:nth-child(3) {
+      width: 100%;
+      max-width: 100%;
+    }
+    .gallery img:nth-child(4),
+    .gallery img:nth-child(5) {
+      width: 48%;
+      max-width: 48%;
+    }
+    @media (max-width: 768px) {
+      .gallery img:nth-child(4),
+      .gallery img:nth-child(5) {
+        width: 100%;
+        max-width: 100%;
+      }
     }
   </style>
 </head>
 <body>
-  <section id="fleet" style="padding: 40px;">
-    <h2 style="text-align: center; font-size: 2em; margin-bottom: 30px;">Explore Our Fleet</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-      
-      <div>
-        <img src="media/r8-audi.jpg" alt="R8 Audi" style="width:100%; border-radius: 10px;">
-        <h4 style="text-align: center; margin-top: 10px;">R8 Audi</h4>
-      </div>
-      
-      <div>
-        <img src="media/mclaren-570s.jpg" alt="McLaren 570s" style="width:100%; border-radius: 10px;">
-        <h4 style="text-align: center; margin-top: 10px;">McLaren 570s</h4>
-      </div>
-  
-      <div>
-        <img src="media/escalade-esv.jpg" alt="Escalade ESV" style="width:100%; border-radius: 10px;">
-        <h4 style="text-align: center; margin-top: 10px;">Escalade ESV</h4>
-      </div>
-  
-      <div>
-        <img src="media/bentley-bentayga.jpg" alt="Bentley Bentayga" style="width:100%; border-radius: 10px;">
-        <h4 style="text-align: center; margin-top: 10px;">Bentley Bentayga</h4>
-      </div>
-  
-      <div>
-        <img src="media/rolls-royce-cullinan.jpg" alt="Rolls Royce Cullinan" style="width:100%; border-radius: 10px;">
-        <h4 style="text-align: center; margin-top: 10px;">Rolls Royce Cullinan</h4>
-      </div>
-  
-      <div>
-        <img src="media/rolls-royce-phantom.jpg" alt="Rolls Royce Phantom" style="width:100%; border-radius: 10px;">
-        <h4 style="text-align: center; margin-top: 10px;">Rolls Royce Phantom</h4>
-      </div>
-  
-      <div>
-        <img src="media/rolls-royce-wraith.jpg" alt="Rolls Royce Wraith" style="width:100%; border-radius: 10px;">
-        <h4 style="text-align: center; margin-top: 10px;">Rolls Royce Wraith</h4>
-      </div>
-  
-      <div>
-        <img src="media/rolls-royce-ghost.jpg" alt="Rolls Royce Ghost" style="width:100%; border-radius: 10px;">
-        <h4 style="text-align: center; margin-top: 10px;">Rolls Royce Ghost</h4>
-      </div>
-  
-      <div>
-        <img src="media/maybach-gls600.jpg" alt="Maybach GLS 600" style="width:100%; border-radius: 10px;">
-        <h4 style="text-align: center; margin-top: 10px;">Maybach GLS 600</h4>
-      </div>
-  
-      <div>
-        <img src="media/maybach-s550.jpg" alt="Maybach S550" style="width:100%; border-radius: 10px;">
-        <h4 style="text-align: center; margin-top: 10px;">Maybach S550</h4>
-      </div>
-  
-      <div>
-        <img src="media/gmc-yukon-denali-ultimate.jpg" alt="GMC Yukon Denali Ultimate" style="width:100%; border-radius: 10px;">
-        <h4 style="text-align: center; margin-top: 10px;">GMC Yukon Denali Ultimate</h4>
-      </div>
-  
-      <div>
-        <img src="media/lincoln-navigator.jpg" alt="Lincoln Navigator" style="width:100%; border-radius: 10px;">
-        <h4 style="text-align: center; margin-top: 10px;">Lincoln Navigator</h4>
-      </div>
-  
-      <div>
-        <img src="media/maybach-sprinter.jpg" alt="Maybach Sprinter" style="width:100%; border-radius: 10px;">
-        <h4 style="text-align: center; margin-top: 10px;">Maybach Sprinter</h4>
-      </div>
-  
-      <div>
-        <img src="media/mercedes-sprinter.jpg" alt="Mercedes Sprinter" style="width:100%; border-radius: 10px;">
-        <h4 style="text-align: center; margin-top: 10px;">Mercedes Sprinter</h4>
-      </div>
-  
-    </div>
-  </section>
-  
+
   <header>
-    <img src="logo.jpg" alt="F1DAN Logo" />
+    <img src="logo.jpg" alt="F1DAN Logo" style="height: 50px;" />
     <nav>
       <a href="index.html">Home</a>
-      <a href="chauffeured-cars.html">Chauffeured Services</a>
-      <a href="music-videos&photoshoots.html">Music Videos & Photoshoots</a>
+      <a href="chauffeured-cars.html">Chauffeured Cars</a>
+      <a href="music-video-cars.html">Music Video Cars</a>
       <a href="tours.html">City Tours</a>
+      <a href="all-day-packages.html">All-Day Packages</a>
       <a href="fleet.html">Fleet</a>
       <a href="boats.html">Luxury Boats</a>
       <a href="event-venues.html">Event Venues</a>
       <a href="contact.html">Contact</a>
-    </nav>    
+    </nav>
   </header>
 
-  <h1>Explore Our Signature Fleet</h1>
+  <section class="page-banner" style="background: linear-gradient(rgba(6, 25, 19, 0.85), rgba(6, 25, 19, 0.85)), url('media/boat1.jpg') center/cover no-repeat;">
+    <div class="banner-content">
+      <h1>Luxury Boat Rentals</h1>
+      <p>Private yacht experiences on Toronto’s waterfront. Sail in style with our premium boat fleet curated for elegance, exclusivity, and unforgettable moments.</p>
+    </div>
+  </section>
 
-  <section class="fleet-grid">
-    <div class="fleet-item">Escalade ESV</div>
-    <div class="fleet-item">Bentley Bentayga</div>
-    <div class="fleet-item">Rolls Royce Cullinan</div>
-    <div class="fleet-item">Rolls Royce Phantom</div>
-    <div class="fleet-item">Rolls Royce Wraith</div>
-    <div class="fleet-item">Rolls Royce Ghost</div>
-    <div class="fleet-item">Maybach GLS 600</div>
-    <div class="fleet-item">Maybach S550</div>
-    <div class="fleet-item">GMC Yukon Denali Ultimate</div>
-    <div class="fleet-item">Lincoln Navigator</div>
-    <div class="fleet-item">Maybach Sprinter</div>
-    <div class="fleet-item">Mercedes Sprinter</div>
+  <section class="section-box">
+    <h2>🛥️ Luxury Yacht Rentals on the Water</h2>
+    <p>Step aboard and experience the ultimate day on the water. F1DAN offers premium yacht and boat rentals across Toronto's most scenic waterfronts, including the iconic Scarborough Bluffs, Downtown skyline, Mimico Harbour, and Friday Harbour Marina. Whether you’re celebrating with a close group or organizing an unforgettable party, our fleet accommodates:</p>
+    <ul>
+      <li>10-person private charters</li>
+      <li>15- to 20-person mid-size celebrations</li>
+      <li>25-person full-day elite packages</li>
+      <li>Multi-yacht tie-ups for up to 3+ vessels</li>
+    </ul>
+    <p>Choose your charter by the hour — 4, 6, or 8-hour options — or reserve a full-day private yacht experience and let our team handle every detail.</p>
+  </section>
+
+  <section class="section-box">
+    <h2>✨ Add-On Concierge Services</h2>
+    <p>Elevate your boat day with optional curated services designed to make your experience flawless and memorable:</p>
+    <ul>
+      <li>🎥 Professional Photographer & Videographer</li>
+      <li>🚁 4K Drone Coverage for cinematic footage</li>
+      <li>🍸 Licensed Bartender & Cocktail Setup</li>
+      <li>🧑‍🍳 Host, Server, or Assistant Staffing</li>
+      <li>💼 Custom Branding & Event Styling Available</li>
+    </ul>
+    <p>We also offer <strong>hourly Jet Ski rentals</strong> to enhance your experience. Whether for adrenaline or ambiance, our sleek jet skis add an elite flair to your day on the water.</p>
+    <p>From intimate sunset cruises to grand celebrations — every charter is captained and safety certified, ensuring luxury, comfort, and peace of mind throughout your journey.</p>
+    <p>Now serving Scarborough Bluffs, Downtown Toronto, East & Central Waterfront, Mimico, and Friday Harbour.</p>
+  </section>
+
+  <a href="inquire.html" class="inquire-btn">Inquire About Booking</a>
+
+  <section class="gallery">
+    <img src="media/boat1.jpg" alt="Luxury Boat 1" />
+    <img src="media/boat2.jpg" alt="Luxury Boat 2" />
+    <img src="media/boat3.jpg" alt="Luxury Boat 3" />
+    <img src="media/boat4.jpg" alt="Luxury Boat 4" />
+    <img src="media/boat5.jpg" alt="Luxury Boat 5" />
   </section>
 
   <footer>
-    <p>&copy; 2025 F1DAN Luxury Concierge</p>
+    <p>&copy; 2025 F1DAN Luxury Concierge. All rights reserved.</p>
   </footer>
+
+  <button onclick="navigator.share({ title: document.title, url: window.location.href })" style="position:fixed; bottom:20px; right:20px; background:#b6f5c2; color:#061913; border:none; border-radius:8px; padding:0.75rem 1rem; font-weight:bold; z-index:999;">
+    Share This Page
+  </button>
+
 </body>
 </html>
-<button onclick="navigator.share({ title: document.title, url: window.location.href })" style="position:fixed; bottom:20px; right:20px; background:#b6f5c2; color:#061913; border:none; border-radius:8px; padding:0.75rem 1rem; font-weight:bold; z-index:999;">
-  Share This Page
-</button>
