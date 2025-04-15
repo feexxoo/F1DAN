@@ -7,7 +7,7 @@
   box-sizing: border-box;
 }
 
-/* Base */
+/* Base Styling */
 body {
   background-color: #061913;
   color: #f4f4f4;
@@ -41,6 +41,7 @@ nav a {
   text-decoration: none;
   font-weight: bold;
   font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
 }
 
 nav a:hover {
@@ -58,13 +59,18 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.5px;
 }
 
-/* Universal Page Headers */
-.page-title, h1.page-heading, .landing-title, h1 {
+/* Consistent Page Headers */
+h1,
+.page-title,
+h1.page-heading,
+.landing-title {
   font-weight: 700;
   font-size: 2.6rem;
   text-transform: uppercase;
-  margin-bottom: 2rem;
   letter-spacing: 1px;
+  margin-top: 2.5rem;
+  margin-bottom: 2rem;
+  color: #b6f5c2;
 }
 
 /* Hero Section */
@@ -151,7 +157,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
-/* Contact + Forms */
+/* Booking Forms + Contact */
 .container {
   max-width: 600px;
   margin: 3rem auto;
@@ -224,12 +230,12 @@ footer {
   color: #ccc;
 }
 
-/* Make All Images Clickable (except logo) */
+/* Make all non-header images clickable */
 img:not(header img) {
   cursor: pointer;
 }
 
-/* Mobile Responsive */
+/* Responsive Layout */
 @media (max-width: 768px) {
   header, nav {
     flex-direction: column;
