@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>City Tours | F1DAN</title>
+  <title>Luxury Tours | F1DAN</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="favicon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
-
   <style>
     body {
       margin: 0;
@@ -15,15 +14,20 @@
       background: #061913;
       color: #f4f4f4;
     }
-
-    h1 {
+    h1, h2 {
       font-family: 'Poppins', sans-serif;
       text-align: center;
-      font-size: 2.5rem;
+    }
+    h1 {
+      font-size: 2.8rem;
       color: #b6f5c2;
       margin-top: 2rem;
     }
-
+    h2 {
+      font-size: 2rem;
+      color: #d5a85d;
+      margin-bottom: 1rem;
+    }
     header {
       background-color: #0e241a;
       padding: 1rem 2rem;
@@ -32,27 +36,22 @@
       align-items: center;
       flex-wrap: wrap;
     }
-
     header img {
       height: 50px;
     }
-
     nav a {
       color: #e2ffe0;
       margin-left: 20px;
       text-decoration: none;
       font-weight: bold;
     }
-
     nav a:hover {
       color: #c0f5c7;
     }
-
     .content {
       padding: 3rem 2rem;
       text-align: center;
     }
-
     .content img {
       max-width: 90%;
       height: auto;
@@ -60,7 +59,37 @@
       border-radius: 12px;
       box-shadow: 0 0 20px rgba(0,0,0,0.4);
     }
-
+    .section {
+      background: #0e241a;
+      border-radius: 16px;
+      padding: 2rem;
+      margin: 2rem auto;
+      max-width: 900px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+    .section p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      font-family: 'Poppins', sans-serif;
+      color: #f4f4f4;
+    }
+    .gold-btn {
+      display: inline-block;
+      background-color: #d5a85d;
+      color: #061913;
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 40px;
+      text-decoration: none;
+      margin-top: 1.5rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(213, 168, 93, 0.3);
+    }
+    .gold-btn:hover {
+      background-color: #e6c57a;
+      box-shadow: 0 6px 25px rgba(213, 168, 93, 0.5);
+    }
     footer {
       text-align: center;
       padding: 1rem;
@@ -78,7 +107,6 @@
       <a href="chauffeured-cars.html">Chauffeured Cars</a>
       <a href="music-video-cars.html">Music Video Cars</a>
       <a href="tours.html">City Tours</a>
-      <a href="all-day-packages.html">All-Day Packages</a>
       <a href="fleet.html">Fleet</a>
       <a href="boats.html">Luxury Boats</a>
       <a href="event-venues.html">Event Venues</a>
@@ -87,11 +115,36 @@
   </header>
 
   <main class="content">
-    <h1>Toronto Luxury Tours</h1>
-    <p>Enjoy a curated city tour in a chauffeured exotic car, complete with your choice of destinations. Explore Toronto’s finest restaurants, lounges, galleries, and skyline views.</p>
-    <p><strong>Tour Add-Ons:</strong> Food tastings, rooftop experiences, professional photography, and a private host.</p>
-    
-    <img src="media/exotic6.jpg" alt="Luxury Car City Tour - Exotic 6" />
+    <h1>F1DAN Curated Luxury Tours</h1>
+    <img src="media/exotic2.jpg" alt="Luxury Tour Experience">
+
+    <div class="section">
+      <h2>City Tours</h2>
+      <p>Explore Toronto through the lens of luxury. Our signature city tours include chauffeur-driven black XL SUVs, a dedicated host, and a curated itinerary of iconic landmarks, boutiques, skyline views, and cultural gems. Every moment is styled and elevated for a flawless experience.</p>
+      <p><strong>Includes:</strong> Chauffeur, host, refreshments, customized stops, and cinematic documentation options.</p>
+      <a href="contact.html" class="gold-btn">Contact to Book</a>
+    </div>
+
+    <div class="section">
+      <h2>Winery Tours</h2>
+      <p>Embark on a luxurious escape through Ontario’s finest vineyards. Our winery tours offer private, chauffeured travel to prestigious estates, with options for exclusive tastings, gourmet pairings, and tranquil views — all curated with elegance in mind.</p>
+      <p><strong>Includes:</strong> Luxury transport, private reservations, charcuterie, vineyard itinerary planning, and photography add-ons.</p>
+      <a href="contact.html" class="gold-btn">Contact to Book</a>
+    </div>
+
+    <div class="section">
+      <h2>Top Places to Eat</h2>
+      <p>Begin with a picturesque café, continue with elegant dining, cocktails with a view, and finish with curated dessert — all in one luxury tour. With a personal chauffeur and itinerary arranged by F1DAN, you experience the city's culinary elite like royalty.</p>
+      <p><strong>Includes:</strong> Chauffeured evening (4–6 hours), suggested itinerary & reservations, host (optional), and photo or video enhancements.</p>
+      <a href="contact.html" class="gold-btn">Contact to Book</a>
+    </div>
+
+    <div class="section">
+      <h2>Private Tours</h2>
+      <p>Whether it's a high-profile occasion, private romantic experience, or exclusive city discovery, F1DAN’s private tours are fully customizable and exceptionally discreet. Let us handle every detail while you enjoy a world-class journey.</p>
+      <p><strong>Includes:</strong> Any luxury vehicle from our fleet, optional host, floral or gift arrangements, custom routes, and creative media services.</p>
+      <a href="contact.html" class="gold-btn">Contact to Book</a>
+    </div>
   </main>
 
   <footer>
