@@ -201,5 +201,15 @@
     <p>&copy; 2025 F1DAN Luxury Concierge. All rights reserved.</p>
   </footer>
 
+  <script>
+    window.onload = () => {
+      document.querySelectorAll("img:not(header img)").forEach(img => {
+        img.addEventListener("click", () => {
+          window.location.href = "https://f1dan.ca/contact.html";
+        });
+      });
+    };
+  </script>
+  
 </body>
 </html>

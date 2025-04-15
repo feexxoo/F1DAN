@@ -176,5 +176,15 @@
     Share This Page
   </button>
 
+  <script>
+    window.onload = () => {
+      document.querySelectorAll("img:not(header img)").forEach(img => {
+        img.addEventListener("click", () => {
+          window.location.href = "https://f1dan.ca/contact.html";
+        });
+      });
+    };
+  </script>
+  
 </body>
 </html>
