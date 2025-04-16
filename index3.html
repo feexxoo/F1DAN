@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#061913" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>F1DAN | Luxury Chauffeured Experience</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-275ZSCJX7B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-275ZSCJX7B');
+    </script>
+  </head>  
+<body>
+  <header>
+    <div class="header-left">
+      <img src="logo.jpg" alt="F1DAN Logo" style="width: 150px; height: auto;" />
+    </div>
+    <nav class="header-right">
+      <a href="index.html">Home</a>
+      <a href="chauffeured-cars.html">Chauffeured Services</a>
+      <a href="music-videos&photoshoots.html">Music Videos & Photoshoots</a>
+      <a href="tours.html">City Tours</a>
+      <a href="fleet.html">Fleet</a>
+      <a href="boats.html">Luxury Boats</a>
+      <a href="event-venues.html">Event Venues</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>  
+
+  <div id="email-popup" class="email-popup" style="display:none;">
+    <div class="email-popup-content">
+      <h3 style="color:#fff; font-family:'Poppins';">Join F1DAN Elite</h3>
+      <p style="color:#ccc; font-family:'Lato';">Enter your email for exclusive luxury offers.</p>
+      <input type="email" id="visitor-email" placeholder="you@example.com">
+      <button onclick="submitEmail()">Submit</button>
+    </div>
+  </div>
+
+  <section class="hero" style="background: url('media/hero.png') no-repeat center center / cover; height: 100vh; display: flex; align-items: center; justify-content: center;">
+    <div class="hero-content">
+      <p style="font-size: 1.5rem; font-weight: 500; color: white; text-shadow: none;">Unparalleled Luxury. Curated Experiences. Ultimate Prestige.</p>
+    </div>
+  </section>
+
+  <section id="fleet-carousel" style="background-color:#061913; padding: 3rem 1rem;">
+    <h2 style="color:#b6f5c2; text-align:center; font-family:'Poppins', sans-serif; font-size: 2rem; margin-bottom:2rem;">Explore Our Fleet</h2>
+    <div class="carousel-container">
+      <button class="carousel-prev">&#8249;</button>
+      <div class="carousel">
+        <div class="carousel-item"><img src="media/r8-audi.jpg" alt="Audi R8"><p>Audi R8</p></div>
+        <div class="carousel-item"><img src="media/mclaren-570s.jpg" alt="McLaren 570s"><p>McLaren 570s</p></div>
+        <div class="carousel-item"><img src="media/rolls-royce-wraith.jpg" alt="Rolls Royce Wraith"><p>Rolls Royce Wraith</p></div>
+        <div class="carousel-item"><img src="media/rolls-royce-ghost.jpg" alt="Rolls Royce Ghost"><p>Rolls Royce Ghost</p></div>
+        <div class="carousel-item"><img src="media/maybach-s550.jpg" alt="Maybach S550"><p>Maybach S550</p></div>
+        <div class="carousel-item"><img src="media/escalade-esv.jpg" alt="Escalade ESV"><p>Escalade ESV</p></div>
+        <div class="carousel-item"><img src="media/bentley-bentayga.jpg" alt="Bentley Bentayga"><p>Bentley Bentayga</p></div>
+        <div class="carousel-item"><img src="media/rolls-royce-cullinan.jpg" alt="Rolls Royce Cullinan"><p>Rolls Royce Cullinan</p></div>
+        <div class="carousel-item"><img src="media/rolls-royce-phantom.jpg" alt="Rolls Royce Phantom"><p>Rolls Royce Phantom</p></div>
+        <div class="carousel-item"><img src="media/maybach-gls600.jpg" alt="Maybach GLS 600"><p>Maybach GLS 600</p></div>
+        <div class="carousel-item"><img src="media/gmc-yukon-denali-ultimate.jpg" alt="GMC Yukon Denali"><p>GMC Yukon Denali Ultimate</p></div>
+        <div class="carousel-item"><img src="media/lincoln-navigator.jpg" alt="Lincoln Navigator"><p>Lincoln Navigator</p></div>
+        <div class="carousel-item"><img src="media/maybach-sprinter.jpg" alt="Maybach Sprinter"><p>Maybach Sprinter</p></div>
+        <div class="carousel-item"><img src="media/mercedes-sprinter.jpg" alt="Mercedes Sprinter"><p>Mercedes Sprinter</p></div>
+      </div>
+      <button class="carousel-next">&#8250;</button>
+    </div>
+  </section>
+
+<!-- WHY CHOOSE F1DAN -->
+<section style="padding: 4rem 2rem; background-color: #091e16; text-align:center;">
+  <h2 style="color:#d5a85d; font-family:'Playfair Display', serif; font-size: 2.2rem; letter-spacing: 1px; text-transform: uppercase;">
+    WHY CHOOSE F1DAN
+  </h2>
+  <p style="color:#f4f4f4; font-family:'Poppins', sans-serif; font-size: 1.1rem; max-width: 800px; margin: 1.2rem auto;">
+    We are Toronto’s premier concierge brand, offering an exclusive fleet of ultra-luxury vehicles, elite chauffeurs, and red-carpet service.
+    With over five years of experience curating high-profile moments, we don’t just drive — we define the experience.
+  </p>
+  <p style="color:#b6f5c2; font-family:'Poppins'; font-weight: 500;">Optional Add-on: Cinematic Videography Available to Document Your Ride</p>
+</section>
+
+<!-- Buttons Section -->
+<div style="margin: 3rem auto; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+  <a href="inquire.html" class="gold-btn">INQUIRE</a>
+  <a href="contact.html" class="gold-btn">CONTACT</a>
+</div>
+
+<!-- Elegant Button Styles -->
+<style>
+.gold-btn {
+  background-color: #d5a85d;
+  color: #061913;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 4px 15px rgba(213, 168, 93, 0.4);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.gold-btn:hover {
+  background-color: #e6c57a;
+  box-shadow: 0 6px 20px rgba(213, 168, 93, 0.6);
+  transform: translateY(-2px);
+}
+</style>
+
+<section style="padding: 4rem 1rem; background-color: #0e241a;">
+  <h2 style="font-size: 2.4rem; color: #b6f5c2; text-align: center; margin-bottom: 3rem; font-family: 'Poppins', sans-serif; text-transform: uppercase; letter-spacing: 1px;">
+    Curated Experiences by F1DAN
+  </h2>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; max-width: 100%; margin: 0 auto;">
+
+    <!-- Chauffeured Services -->
+    <a href="chauffeured-cars.html" style="text-decoration: none;">
+      <div style="
+        height: 280px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 1.5rem;
+        border-radius: 12px;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('media/exotic6.jpg') center/cover no-repeat;
+        box-shadow: 0 0 12px rgba(0,0,0,0.5);
+        color: #fff;
+        transition: transform 0.3s ease;
+      " onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+        <h3 style="color: #d5a85d; font-size: 1.4rem;">Chauffeured Services</h3>
+        <p style="margin-top: 0.5rem;">Ride in unmatched style with black XL SUVs and exotic vehicles. Professional drivers. Red carpet service. Fully tailored.</p>
+      </div>
+    </a>
+
+    <!-- Music Videos -->
+    <a href="music-video-cars.html" style="text-decoration: none;">
+      <div style="
+        height: 280px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 1.5rem;
+        border-radius: 12px;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('media/exotic4.jpg') center/cover no-repeat;
+        box-shadow: 0 0 12px rgba(0,0,0,0.5);
+        color: #fff;
+        transition: transform 0.3s ease;
+      " onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+        <h3 style="color: #d5a85d; font-size: 1.4rem;">Music Videos & Photoshoots</h3>
+        <p style="margin-top: 0.5rem;">Rent exotic vehicles for iconic visuals. Full-day support, drivers, lighting, and cinematic production services available.</p>
+      </div>
+    </a>
+
+    <!-- City Tours -->
+    <a href="tours.html" style="text-decoration: none;">
+      <div style="
+        height: 280px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 1.5rem;
+        border-radius: 12px;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('media/exotic2.jpg') center/cover no-repeat;
+        box-shadow: 0 0 12px rgba(0,0,0,0.5);
+        color: #fff;
+        transition: transform 0.3s ease;
+      " onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+        <h3 style="color: #d5a85d; font-size: 1.4rem;">City Tours</h3>
+        <p style="margin-top: 0.5rem;">Explore Toronto in luxury. Hosts, refreshments, skyline views & curated stops. A truly elevated sightseeing experience.</p>
+      </div>
+    </a>
+
+    <!-- Luxury Boats -->
+    <a href="boats.html" style="text-decoration: none;">
+      <div style="
+        height: 280px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 1.5rem;
+        border-radius: 12px;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('media/boat1.jpg') center/cover no-repeat;
+        box-shadow: 0 0 12px rgba(0,0,0,0.5);
+        color: #fff;
+        transition: transform 0.3s ease;
+      " onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+        <h3 style="color: #d5a85d; font-size: 1.4rem;">Luxury Boats</h3>
+        <p style="margin-top: 0.5rem;">Yachts. Jet skis. Drone footage. Tie-ups. Bartenders. Cruise Toronto's waterfront in pure curated elegance.</p>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- LightWidget WIDGET -->
+<script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+<iframe ...
+
+<!-- INSTAGRAM SECTION -->
+<section style="padding: 4rem 2rem; background: #0e241a; text-align: center;">
+  <h2 style="color: #b6f5c2; font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 2rem;">
+    LIVE INSTAGRAM FEED — @FEEXXOO
+  </h2>
+  <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+  <iframe src="https://cdn.lightwidget.com/widgets/2ab068e24c6b5417958ef1a03c109299.html" 
+          scrolling="no" allowtransparency="true" class="lightwidget-widget"
+          style="width:100%;border:0;overflow:hidden;height:500px;"></iframe>
+</section>
