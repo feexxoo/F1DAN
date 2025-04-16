@@ -8,136 +8,28 @@
   <link rel="icon" href="favicon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #061913;
-      color: #e0ffe5;
-    }
-    header, footer {
-      background-color: #0e241a;
-      padding: 1.2rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    header img {
-      height: 50px;
-    }
-    nav a {
-      color: #e2ffe0;
-      margin-left: 20px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1rem;
-    }
-    nav a:hover {
-      color: #b2ffc0;
-    }
-    .container {
-      max-width: 900px;
-      margin: 3rem auto;
-      background: #0e241a;
-      padding: 2.5rem;
-      border-radius: 14px;
-      box-shadow: 0 0 25px rgba(0,0,0,0.4);
-    }
-    h1 {
-      text-align: center;
-      color: #b6f5c2;
-      margin-bottom: 2rem;
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-    }
-    label {
-      color: #f4f4f4;
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-    }
-    input, select, textarea {
-      width: 100%;
-      padding: 0.85rem;
-      border-radius: 10px;
-      border: none;
-      background: #1b3c2d;
-      color: #fff;
-      margin-bottom: 1.4rem;
-      font-size: 1rem;
-      font-family: 'Poppins', sans-serif;
-    }
-    textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-    button {
-      width: 100%;
-      padding: 1rem;
-      background-color: #d5a85d;
-      color: #061913;
-      font-weight: bold;
-      font-size: 1rem;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #e2bb6d;
-    }
-    .checkbox {
-      display: flex;
-      align-items: center;
-      color: #f4f4f4;
-      font-size: 0.95rem;
-    }
-    .checkbox input {
-      margin-right: 10px;
-    }
-    .disclaimer {
-      font-size: 0.95rem;
-      color: #bbb;
-      margin-top: -0.5rem;
-      margin-bottom: 1.5rem;
-    }
-    .step-title {
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: #d5a85d;
-      margin: 2rem 0 1rem;
-      text-align: center;
-    }
-    .thumbnail-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-    .thumbnail {
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-    .thumbnail:hover {
-      transform: scale(1.05);
-    }
-    .thumbnail img {
-      width: 100%;
-      display: block;
-    }
-    .duration-info {
-      text-align: center;
-      font-size: 1rem;
-      color: #b6f5c2;
-      margin-bottom: 1rem;
-    }
-    @media (max-width: 600px) {
-      .container {
-        padding: 1.5rem;
-      }
-    }
+    body { margin: 0; font-family: 'Poppins', sans-serif; background: #061913; color: #e0ffe5; }
+    header, footer { background-color: #0e241a; padding: 1.2rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    header img { height: 50px; }
+    nav a { color: #e2ffe0; margin-left: 20px; text-decoration: none; font-weight: bold; font-size: 1rem; }
+    nav a:hover { color: #b2ffc0; }
+    .container { max-width: 900px; margin: 3rem auto; background: #0e241a; padding: 2.5rem; border-radius: 14px; box-shadow: 0 0 25px rgba(0,0,0,0.4); }
+    h1 { text-align: center; color: #b6f5c2; margin-bottom: 2rem; font-family: 'Playfair Display', serif; font-size: 2rem; }
+    label { color: #f4f4f4; display: block; margin-bottom: 0.5rem; font-weight: 500; }
+    input, select, textarea { width: 100%; padding: 0.85rem; border-radius: 10px; border: none; background: #1b3c2d; color: #fff; margin-bottom: 1.4rem; font-size: 1rem; font-family: 'Poppins', sans-serif; }
+    textarea { resize: vertical; min-height: 120px; }
+    button { width: 100%; padding: 1rem; background-color: #d5a85d; color: #061913; font-weight: bold; font-size: 1rem; border: none; border-radius: 10px; cursor: pointer; }
+    button:hover { background-color: #e2bb6d; }
+    .checkbox { display: flex; align-items: center; color: #f4f4f4; font-size: 0.95rem; }
+    .checkbox input { margin-right: 10px; }
+    .disclaimer { font-size: 0.95rem; color: #bbb; margin-top: -0.5rem; margin-bottom: 1.5rem; }
+    .step-title { font-size: 1.2rem; font-weight: bold; color: #d5a85d; margin: 2rem 0 1rem; text-align: center; }
+    .thumbnail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+    .thumbnail { border-radius: 10px; overflow: hidden; box-shadow: 0 0 10px rgba(0,0,0,0.5); cursor: pointer; transition: transform 0.3s ease; }
+    .thumbnail:hover { transform: scale(1.05); }
+    .thumbnail img { width: 100%; display: block; }
+    .duration-info { text-align: center; font-size: 1rem; color: #b6f5c2; margin-bottom: 1rem; }
+    @media (max-width: 600px) { .container { padding: 1.5rem; } }
   </style>
   <script>
     function calculateDuration() {
@@ -235,26 +127,35 @@
       <div class="thumbnail-grid">
         <div class="thumbnail"><img src="media/rolls-royce-phantom.jpg" alt="Rolls Royce Phantom"></div>
         <div class="thumbnail"><img src="media/rolls-royce-ghost.jpg" alt="Rolls Royce Ghost"></div>
+        <div class="thumbnail"><img src="media/rolls-royce-cullinan.jpg" alt="Rolls Royce Cullinan"></div>
+        <div class="thumbnail"><img src="media/maybach-s550.jpg" alt="Maybach S550"></div>
         <div class="thumbnail"><img src="media/maybach-gls600.jpg" alt="Maybach GLS 600"></div>
+        <div class="thumbnail"><img src="media/maybach-sprinter.jpg" alt="Maybach Sprinter"></div>
+        <div class="thumbnail"><img src="media/mercedes-sprinter.jpg" alt="Mercedes Sprinter"></div>
+        <div class="thumbnail"><img src="media/gmc-yukon-denali-ultimate.jpg" alt="GMC Yukon Denali"></div>
+        <div class="thumbnail"><img src="media/lincoln-navigator.jpg" alt="Lincoln Navigator"></div>
+        <div class="thumbnail"><img src="media/bentley-bentayga.jpg" alt="Bentley Bentayga"></div>
+        <div class="thumbnail"><img src="media/r8-audi.jpg" alt="Audi R8"></div>
         <div class="thumbnail"><img src="media/mclaren-570s.jpg" alt="McLaren 570s"></div>
+        <div class="thumbnail"><img src="media/escalade-esv.jpg" alt="Escalade ESV"></div>
       </div>
       <label>Select Preferred Vehicle</label>
       <select name="vehicle_choice" required>
         <option value="">Select a vehicle</option>
-        <option>Rolls Royce Phantom</option>
-        <option>Rolls Royce Ghost</option>
-        <option>Rolls Royce Wraith</option>
-        <option>Rolls Royce Cullinan</option>
-        <option>Maybach S550</option>
-        <option>Maybach GLS 600</option>
-        <option>Maybach Sprinter</option>
-        <option>Mercedes Sprinter</option>
-        <option>GMC Yukon Denali</option>
-        <option>Lincoln Navigator</option>
+        <option>Rolls Royce Phantom - 2hrs $800 | $250/additional hr</option>
+        <option>Rolls Royce Ghost - 2hrs $600 | $300/additional hr</option>
+        <option>Rolls Royce Wraith - 2hrs $600 | $250/additional hr</option>
+        <option>Rolls Royce Cullinan - 2hrs $1000 | $300/additional hr</option>
+        <option>Maybach S550 - 2hrs $500 | $200/additional hr</option>
+        <option>Maybach GLS 600 - 2hrs $600 | $250/additional hr</option>
+        <option>Maybach Sprinter - 2hrs $600 | $400/additional 2hrs</option>
+        <option>Mercedes Sprinter - 2hrs $600 | $400/additional 2hrs</option>
+        <option>GMC Yukon Denali - 2hrs $400 | $100/additional hr</option>
+        <option>Lincoln Navigator - 2hrs $400 | $100/additional hr</option>
         <option>Bentley Bentayga</option>
-        <option>Audi R8</option>
-        <option>McLaren 570s</option>
-        <option>Escalade ESV</option>
+        <option>Audi R8 - $1000 (music videos only)</option>
+        <option>McLaren 570s - $1000 (music videos only)</option>
+        <option>Escalade ESV - 2hrs $400 | $100/additional hr</option>
       </select>
 
       <div class="step-title">Step 3: Final Details</div>
@@ -285,7 +186,7 @@
 
           <label class="checkbox">
             <input type="checkbox" name="interac_option" />
-            I would like to pay via Interac. Please contact me for details.
+            I would like to pay via Interac.
           </label>
         </div>
       </div>
