@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="favicon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <style>
     body { margin: 0; font-family: 'Poppins', sans-serif; background: #061913; color: #e0ffe5; }
     header, footer { background-color: #0e241a; padding: 1.2rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
@@ -17,22 +19,32 @@
     h1 { text-align: center; color: #b6f5c2; margin-bottom: 2rem; font-family: 'Playfair Display', serif; font-size: 2rem; }
     label { color: #f4f4f4; display: block; margin-bottom: 0.5rem; font-weight: 500; }
     input, select, textarea { width: 100%; padding: 0.85rem; border-radius: 10px; border: none; background: #1b3c2d; color: #fff; margin-bottom: 1.4rem; font-size: 1rem; font-family: 'Poppins', sans-serif; }
+    input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(1); }
     textarea { resize: vertical; min-height: 120px; }
     button { width: 100%; padding: 1rem; background-color: #d5a85d; color: #061913; font-weight: bold; font-size: 1rem; border: none; border-radius: 10px; cursor: pointer; }
     button:hover { background-color: #e2bb6d; }
     .checkbox { display: flex; align-items: center; color: #f4f4f4; font-size: 0.95rem; }
     .checkbox input { margin-right: 10px; }
     .disclaimer { font-size: 0.95rem; color: #bbb; margin-top: -0.5rem; margin-bottom: 1.5rem; }
-    .step-title { font-size: 1.2rem; font-weight: bold; color: #d5a85d; margin: 2rem 0 1rem; text-align: center; }
-    .thumbnail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
-    .thumbnail { border-radius: 10px; overflow: hidden; box-shadow: 0 0 10px rgba(0,0,0,0.5); cursor: pointer; transition: transform 0.3s ease; text-align: center; }
+    .step-title { font-size: 1.2rem; font-weight: bold; color: #d5a85d; margin: 2rem 0 1rem; text-align: center; text-transform: uppercase; }
+    .thumbnail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+    .thumbnail { border-radius: 12px; overflow: hidden; box-shadow: 0 0 12px rgba(0,0,0,0.5); cursor: pointer; transition: transform 0.3s ease; text-align: center; background: #142c22; }
     .thumbnail:hover { transform: scale(1.05); }
-    .thumbnail img { width: 100%; height: 120px; object-fit: cover; display: block; }
-    .thumbnail span { display: block; color: #ccc; padding: 0.5rem; font-size: 0.9rem; }
+    .thumbnail img { width: 100%; height: 120px; object-fit: cover; display: block; border-bottom: 1px solid #1b3c2d; }
+    .thumbnail span { display: block; color: #ccc; padding: 0.6rem; font-size: 0.95rem; }
     .duration-info { text-align: center; font-size: 1rem; color: #b6f5c2; margin-bottom: 1rem; }
     .hidden { display: none; }
+    .progress-bar { display: flex; margin-bottom: 2rem; overflow: hidden; border-radius: 10px; }
+    .progress-bar div { flex: 1; padding: 0.5rem; text-align: center; background: #1b3c2d; color: #ccc; }
+    .progress-bar .active { background: #d5a85d; color: #061913; font-weight: bold; }
+    .hour-btns { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1rem; }
+    .hour-btns button { width: 40px; height: 40px; font-size: 1.2rem; border-radius: 50%; border: none; background: #d5a85d; color: #061913; cursor: pointer; font-weight: bold; }
+    .total-price { text-align: center; color: #b6f5c2; font-size: 1.2rem; margin-top: 1rem; font-weight: bold; }
     @media (max-width: 600px) { .container { padding: 1.5rem; } }
   </style>
+</head>
+<body>
+<!-- full updated content continues below -->
   <script>
     function validateStep1AndShowStep2() {
       const form = document.forms['booking'];
