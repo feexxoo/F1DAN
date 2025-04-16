@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+\<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -24,25 +24,44 @@
     .checkbox input { margin-right: 10px; }
     .disclaimer { font-size: 0.95rem; color: #bbb; margin-top: -0.5rem; margin-bottom: 1.5rem; }
     .step-title { font-size: 1.2rem; font-weight: bold; color: #d5a85d; margin: 2rem 0 1rem; text-align: center; }
-    .thumbnail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
-    .thumbnail { border-radius: 10px; overflow: hidden; box-shadow: 0 0 10px rgba(0,0,0,0.5); cursor: pointer; transition: transform 0.3s ease; }
+    .thumbnail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+    .thumbnail { border-radius: 10px; overflow: hidden; box-shadow: 0 0 10px rgba(0,0,0,0.5); cursor: pointer; transition: transform 0.3s ease; text-align: center; }
     .thumbnail:hover { transform: scale(1.05); }
-    .thumbnail img { width: 100%; display: block; }
+    .thumbnail img { width: 100%; height: 120px; object-fit: cover; display: block; }
+    .thumbnail span { display: block; color: #ccc; padding: 0.5rem; font-size: 0.9rem; }
     .duration-info { text-align: center; font-size: 1rem; color: #b6f5c2; margin-bottom: 1rem; }
+    .hidden { display: none; }
     @media (max-width: 600px) { .container { padding: 1.5rem; } }
   </style>
   <script>
-    function calculateDuration() {
-      const timeInput = document.querySelector('input[name="pickup_time"]');
-      const output = document.getElementById('durationDisplay');
-      timeInput.addEventListener('change', () => {
-        const value = timeInput.value;
-        if (value) {
-          output.innerText = `⏱ Booking starts at ${value}. Minimum booking duration is 2 hours.`;
+    function validateStep1AndShowStep2() {
+      const form = document.forms['booking'];
+      const dob = new Date(form['birthdate'].value);
+      const year = dob.getFullYear();
+      const age = new Date().getFullYear() - year;
+      if (age < 23 || age > 85) {
+        alert("Booking is only available for clients aged 23 to 85.");
+        return false;
+      }
+      const requiredFields = ['fullname', 'birthdate', 'email', 'phone', 'service_type', 'booking_date', 'pickup_time', 'pickup_location', 'dropoff_location', 'guests'];
+      for (const name of requiredFields) {
+        if (!form[name].value) {
+          alert("Please complete all fields in Step 1 before proceeding.");
+          return false;
         }
-      });
+      }
+      document.getElementById('step2').classList.remove('hidden');
+      return false;
     }
-    window.onload = calculateDuration;
+    function validateStep2AndShowStep3() {
+      const form = document.forms['booking'];
+      if (!form['vehicle_choice'].value) {
+        alert("Please select a vehicle to continue.");
+        return false;
+      }
+      document.getElementById('step3').classList.remove('hidden');
+      return false;
+    }
   </script>
 </head>
 <body>
@@ -59,26 +78,17 @@
       <a href="contact.html">Contact</a>
     </nav>    
   </header>
-
   <main class="container">
     <h1>Reserve Your Luxury Experience</h1>
-    <form name="booking" method="POST" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="bot-field">
+    <form name="booking" method="POST" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return validateStep1AndShowStep2()">
       <input type="hidden" name="form-name" value="booking">
       <p hidden><label>Don’t fill this out: <input name="bot-field"></label></p>
 
       <div class="step-title">Step 1: Booking Details</div>
-      <label>Full Name</label>
-      <input type="text" name="fullname" required />
-
-      <label>Date of Birth</label>
-      <input type="date" name="birthdate" required />
-
-      <label>Email Address</label>
-      <input type="email" name="email" required />
-
-      <label>Phone Number</label>
-      <input type="tel" name="phone" required />
-
+      <label>Full Name</label><input type="text" name="fullname" required />
+      <label>Date of Birth</label><input type="date" name="birthdate" required />
+      <label>Email Address</label><input type="email" name="email" required />
+      <label>Phone Number</label><input type="tel" name="phone" required />
       <label>Service Type</label>
       <select name="service_type" required>
         <option value="">Select Service</option>
@@ -91,22 +101,11 @@
         <option>Luxury Boat Charter</option>
         <option>Autobus</option>
       </select>
-
-      <label>Desired Booking Date</label>
-      <input type="date" name="booking_date" required />
-
-      <label>Pickup Time</label>
-      <input type="time" name="pickup_time" required />
-      <div id="durationDisplay" class="duration-info"></div>
-
-      <label>Pickup Location</label>
-      <input type="text" name="pickup_location" required />
-
-      <label>Drop-off Location</label>
-      <input type="text" name="dropoff_location" required />
-
-      <label>Number of Guests</label>
-      <input type="number" name="guests" min="1" max="30" required />
+      <label>Desired Booking Date</label><input type="date" name="booking_date" required />
+      <label>Pickup Time</label><input type="time" name="pickup_time" required />
+      <label>Pickup Location</label><input type="text" name="pickup_location" required />
+      <label>Drop-off Location</label><input type="text" name="dropoff_location" required />
+      <label>Number of Guests</label><input type="number" name="guests" min="1" max="30" required />
 
       <label>Add-on Services</label>
       <select name="addons" multiple>
@@ -121,87 +120,77 @@
       </select>
 
       <label>Notes or Special Requests</label>
-      <textarea name="notes" placeholder="Let us know how to enhance your experience..."></textarea>
+      <textarea name="notes"></textarea>
 
-      <div class="step-title">Step 2: Choose Your Vehicle</div>
-      <div class="thumbnail-grid">
-        <div class="thumbnail"><img src="media/rolls-royce-phantom.jpg" alt="Rolls Royce Phantom"></div>
-        <div class="thumbnail"><img src="media/rolls-royce-ghost.jpg" alt="Rolls Royce Ghost"></div>
-        <div class="thumbnail"><img src="media/rolls-royce-cullinan.jpg" alt="Rolls Royce Cullinan"></div>
-        <div class="thumbnail"><img src="media/maybach-s550.jpg" alt="Maybach S550"></div>
-        <div class="thumbnail"><img src="media/maybach-gls600.jpg" alt="Maybach GLS 600"></div>
-        <div class="thumbnail"><img src="media/maybach-sprinter.jpg" alt="Maybach Sprinter"></div>
-        <div class="thumbnail"><img src="media/mercedes-sprinter.jpg" alt="Mercedes Sprinter"></div>
-        <div class="thumbnail"><img src="media/gmc-yukon-denali-ultimate.jpg" alt="GMC Yukon Denali"></div>
-        <div class="thumbnail"><img src="media/lincoln-navigator.jpg" alt="Lincoln Navigator"></div>
-        <div class="thumbnail"><img src="media/bentley-bentayga.jpg" alt="Bentley Bentayga"></div>
-        <div class="thumbnail"><img src="media/r8-audi.jpg" alt="Audi R8"></div>
-        <div class="thumbnail"><img src="media/mclaren-570s.jpg" alt="McLaren 570s"></div>
-        <div class="thumbnail"><img src="media/escalade-esv.jpg" alt="Escalade ESV"></div>
-      </div>
-      <label>Select Preferred Vehicle</label>
-      <select name="vehicle_choice" required>
-        <option value="">Select a vehicle</option>
-        <option>Rolls Royce Phantom - 2hrs $800 | $250/additional hr</option>
-        <option>Rolls Royce Ghost - 2hrs $600 | $300/additional hr</option>
-        <option>Rolls Royce Wraith - 2hrs $600 | $250/additional hr</option>
-        <option>Rolls Royce Cullinan - 2hrs $1000 | $300/additional hr</option>
-        <option>Maybach S550 - 2hrs $500 | $200/additional hr</option>
-        <option>Maybach GLS 600 - 2hrs $600 | $250/additional hr</option>
-        <option>Maybach Sprinter - 2hrs $600 | $400/additional 2hrs</option>
-        <option>Mercedes Sprinter - 2hrs $600 | $400/additional 2hrs</option>
-        <option>GMC Yukon Denali - 2hrs $400 | $100/additional hr</option>
-        <option>Lincoln Navigator - 2hrs $400 | $100/additional hr</option>
-        <option>Bentley Bentayga</option>
-        <option>Audi R8 - $1000 (music videos only)</option>
-        <option>McLaren 570s - $1000 (music videos only)</option>
-        <option>Escalade ESV - 2hrs $400 | $100/additional hr</option>
-      </select>
-
-      <div class="step-title">Step 3: Final Details</div>
-      <p style="text-align:center; font-size: 1rem; margin-bottom: 1rem;">Your total will be calculated and confirmed upon booking review.</p>
-      <p style="text-align:center; color: #b6f5c2; margin-bottom: 1rem;">Please log in or continue as guest to complete your reservation.</p>
-
-      <div style="display:flex; flex-wrap: wrap; gap:2rem;">
-        <div style="flex:1; min-width:250px;">
-          <h3 style="color:#d5a85d;">Log In to Your Account</h3>
-          <label>Email or Username</label>
-          <input type="text" name="login_email" />
-          <label>Password</label>
-          <input type="password" name="login_password" />
-          <p style="font-size:0.9rem; margin-top:-0.8rem; color:#ccc;">Forgot password? <a href="#" style="color:#b6f5c2;">Reset here</a></p>
-          <p style="font-size:0.9rem;">Don’t have an account? <a href="#" style="color:#b6f5c2;">Register now</a></p>
+      <div id="step2" class="hidden">
+        <div class="step-title">Step 2: Choose Your Vehicle</div>
+        <div class="thumbnail-grid">
+          <div class="thumbnail"><img src="media/rolls-royce-phantom.jpg" alt="Rolls Royce Phantom"><span>$800 / 2hrs + $250/hr</span></div>
+          <div class="thumbnail"><img src="media/rolls-royce-ghost.jpg" alt="Rolls Royce Ghost"><span>$600 / 2hrs + $300/hr</span></div>
+          <div class="thumbnail"><img src="media/rolls-royce-cullinan.jpg" alt="Rolls Royce Cullinan"><span>$1000 / 2hrs + $300/hr</span></div>
+          <div class="thumbnail"><img src="media/maybach-s550.jpg" alt="Maybach S550"><span>$500 / 2hrs + $200/hr</span></div>
+          <div class="thumbnail"><img src="media/maybach-gls600.jpg" alt="Maybach GLS 600"><span>$600 / 2hrs + $250/hr</span></div>
+          <div class="thumbnail"><img src="media/maybach-sprinter.jpg" alt="Maybach Sprinter"><span>$600 / 2hrs + $400/2hrs</span></div>
+          <div class="thumbnail"><img src="media/mercedes-sprinter.jpg" alt="Mercedes Sprinter"><span>$600 / 2hrs + $400/2hrs</span></div>
+          <div class="thumbnail"><img src="media/gmc-yukon-denali-ultimate.jpg" alt="GMC Yukon Denali"><span>$400 / 2hrs + $100/hr</span></div>
+          <div class="thumbnail"><img src="media/lincoln-navigator.jpg" alt="Lincoln Navigator"><span>$400 / 2hrs + $100/hr</span></div>
+          <div class="thumbnail"><img src="media/bentley-bentayga.jpg" alt="Bentley Bentayga"><span>Request Quote</span></div>
+          <div class="thumbnail"><img src="media/r8-audi.jpg" alt="Audi R8"><span>$1000 (videos only)</span></div>
+          <div class="thumbnail"><img src="media/mclaren-570s.jpg" alt="McLaren 570s"><span>$1000 (videos only)</span></div>
+          <div class="thumbnail"><img src="media/escalade-esv.jpg" alt="Escalade ESV"><span>$400 / 2hrs + $100/hr</span></div>
         </div>
-
-        <div style="flex:1; min-width:250px;">
-          <h3 style="color:#d5a85d;">Continue as Guest</h3>
-          <label>First Name</label>
-          <input type="text" name="guest_firstname" required />
-          <label>Last Name</label>
-          <input type="text" name="guest_lastname" required />
-          <label>Phone Number</label>
-          <input type="tel" name="guest_phone" required />
-          <label>Email Address</label>
-          <input type="email" name="guest_email" required />
-
-          <label class="checkbox">
-            <input type="checkbox" name="interac_option" />
-            I would like to pay via Interac.
-          </label>
-        </div>
+        <label>Select Preferred Vehicle</label>
+        <select name="vehicle_choice" required>
+          <option value="">Select a vehicle</option>
+          <option>Rolls Royce Phantom</option>
+          <option>Rolls Royce Ghost</option>
+          <option>Rolls Royce Wraith</option>
+          <option>Rolls Royce Cullinan</option>
+          <option>Maybach S550</option>
+          <option>Maybach GLS 600</option>
+          <option>Maybach Sprinter</option>
+          <option>Mercedes Sprinter</option>
+          <option>GMC Yukon Denali</option>
+          <option>Lincoln Navigator</option>
+          <option>Bentley Bentayga</option>
+          <option>Audi R8</option>
+          <option>McLaren 570s</option>
+          <option>Escalade ESV</option>
+        </select>
+        <button onclick="return validateStep2AndShowStep3()">Continue to Step 3</button>
       </div>
 
-      <p class="disclaimer">⚠️ A <strong style="color:#d5a85d;">$250 clean-up fee</strong> may apply for smoking, spills, or any damages during service. Full payment is due after confirmation. ID verification will be requested via email before final approval.</p>
-
-      <label class="checkbox">
-        <input type="checkbox" required />
-        I agree to the terms & conditions, cancellation policy, and understand ID will be requested separately before booking is finalized.
-      </label>
-
-      <button type="submit">Submit Reservation Request</button>
-    </form>    
+      <div id="step3" class="hidden">
+        <div class="step-title">Step 3: Final Details</div>
+        <p style="text-align:center; font-size: 1rem; margin-bottom: 1rem;">Your total will be calculated and confirmed upon booking review.</p>
+        <p style="text-align:center; color: #b6f5c2; margin-bottom: 1rem;">Please log in or continue as guest to complete your reservation.</p>
+        <div style="display:flex; flex-wrap: wrap; gap:2rem;">
+          <div style="flex:1; min-width:250px;">
+            <h3 style="color:#d5a85d;">Log In to Your Account</h3>
+            <label>Email or Username</label><input type="text" name="login_email" />
+            <label>Password</label><input type="password" name="login_password" />
+            <p style="font-size:0.9rem; margin-top:-0.8rem; color:#ccc;">Forgot password? <a href="#" style="color:#b6f5c2;">Reset here</a></p>
+            <p style="font-size:0.9rem;">Don’t have an account? <a href="#" style="color:#b6f5c2;">Register now</a></p>
+          </div>
+          <div style="flex:1; min-width:250px;">
+            <h3 style="color:#d5a85d;">Continue as Guest</h3>
+            <label>First Name</label><input type="text" name="guest_firstname" required />
+            <label>Last Name</label><input type="text" name="guest_lastname" required />
+            <label>Phone Number</label><input type="tel" name="guest_phone" required />
+            <label>Email Address</label><input type="email" name="guest_email" required />
+            <label class="checkbox">
+              <input type="checkbox" name="interac_option" /> I would like to pay via Interac.
+            </label>
+          </div>
+        </div>
+        <p class="disclaimer">⚠️ A <strong style="color:#d5a85d;">$250 clean-up fee</strong> may apply for smoking, spills, or any damages during service. Full payment is due after confirmation. ID verification will be requested via email before final approval.</p>
+        <label class="checkbox">
+          <input type="checkbox" required /> I agree to the terms & conditions, cancellation policy, and understand ID will be requested separately before booking is finalized.
+        </label>
+        <button type="submit">Submit Reservation Request</button>
+      </div>
+    </form>
   </main>
-
   <footer>
     <p>&copy; 2025 F1DAN Luxury Concierge. All rights reserved.</p>
   </footer>
