@@ -63,7 +63,6 @@
       font-size: 1rem;
       font-family: 'Poppins', sans-serif;
     }
-    textarea { resize: vertical; min-height: 120px; }
     .half-input {
       width: 48%;
       display: inline-block;
@@ -91,6 +90,9 @@
       border-radius: 10px;
       padding: 0.6rem 1rem;
       margin-bottom: 1rem;
+    }
+    .addon-option label {
+      margin-bottom: 0;
     }
     textarea { resize: vertical; min-height: 120px; }
     button {
@@ -128,14 +130,13 @@
     }
   </style>
 </head>
-
 <body>
   <header>
     <img src="logo.jpg" alt="F1DAN Logo" />
     <nav>
       <a href="index.html">Home</a>
       <a href="chauffeured-cars.html">Chauffeured Services</a>
-      <a href="music-video-cars.html">Music Videos</a>
+      <a href="music-videos&photoshoots.html">Music Videos & Photoshoots</a>
       <a href="tours.html">City Tours</a>
       <a href="fleet.html">Fleet</a>
       <a href="boats.html">Luxury Boats</a>
@@ -169,125 +170,91 @@
       <input type="email" name="email" required />
 
       <label>Service Type</label>
-      <div class="addon-option">
-        <label><input type="radio" name="service_type" value="Hourly Chauffeured" required /> Hourly Chauffeured</label>
-        <span class="gold-bar">$400+</span>
-      </div>
-      <div class="addon-option">
-        <label><input type="radio" name="service_type" value="Airport Pickup / Drop" /> Airport Pickup / Drop</label>
-        <span class="gold-bar">$250</span>
-      </div>
-      <div class="addon-option">
-        <label><input type="radio" name="service_type" value="Point to Point" /> Point to Point</label>
-        <span class="gold-bar">$300+</span>
-      </div>
-      <div class="addon-option">
-        <label><input type="radio" name="service_type" value="Wedding Chauffeur" /> Wedding Chauffeur</label>
-        <span class="gold-bar">$500+</span>
-      </div>
-      <div class="addon-option">
-        <label><input type="radio" name="service_type" value="Video or Photoshoot" /> Video or Photoshoot</label>
-        <span class="gold-bar">$1000+</span>
-      </div>
-      <div class="addon-option">
-        <label><input type="radio" name="service_type" value="City Tour" /> City Tour (4 hrs)</label>
-        <span class="gold-bar">$1000</span>
-      </div>
-      <div class="addon-option">
-        <label><input type="radio" name="service_type" value="Luxury Boat Charter" /> Luxury Boat Charter</label>
-        <span class="gold-bar">$2500+</span>
-      </div>
-      <div class="addon-option">
-        <label><input type="radio" name="service_type" value="Autobus Rental" /> Autobus Rental</label>
-        <span class="gold-bar">$400/hr</span>
-      </div>
-      
+      <select name="service_type" required>
+        <option value="">Select Service</option>
+        <option>Hourly Chauffeured - $400+</option>
+        <option>Airport Pickup / Drop - $250</option>
+        <option>Point to Point - $300+</option>
+        <option>Wedding Chauffeur - $500+</option>
+        <option>Video or Photoshoot - $1000+</option>
+        <option>City Tour (4 hrs) - $1000</option>
+        <option>Luxury Boat Charter - $2500+</option>
+        <option>Autobus Rental - $400/hr</option>
+      </select>
 
       <div class="inline-group">
         <div class="half-input">
           <label>Booking Date</label>
-          <input type="date" name="booking_date" style="border: 2px solid #d5a85d;" required />
+          <input type="date" name="booking_date" required />
         </div>
         <div class="half-input">
           <label>Pickup Time</label>
-          <div style="position: relative;">
-            <input type="time" name="pickup_time" required style="border: 2px solid #d5a85d; padding-left: 2.5rem;" />
-            <span style="position:absolute; top: 50%; left: 0.8rem; transform: translateY(-50%); color: gold; font-size: 1.2rem;">
-              ⏰
-            </span>
-          </div>
+          <input type="time" name="pickup_time" required />
         </div>
-      </div>      
+      </div>
+
+      <label>Pickup Location</label>
+      <input type="text" name="pickup_location" placeholder="Enter location or drag map below" />
+      <iframe class="map-frame" src="https://maps.google.com/maps?q=Toronto&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+
+      <label>Drop-off Location</label>
+      <input type="text" name="dropoff_location" placeholder="Enter location or drag map below" />
+      <iframe class="map-frame" src="https://maps.google.com/maps?q=Toronto&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+
+      <label>Number of Guests</label>
+      <input type="number" name="guests" min="1" max="30" required />
+
       <label>Add-on Services</label>
-      <div class="addon-option">
-        <label><input type="checkbox" name="addons" value="Photographer" /> Photographer</label>
-        <span class="gold-bar">$200/hr</span>
-      </div>
-      <div class="addon-option">
-        <label><input type="checkbox" name="addons" value="Videographer" /> Videographer</label>
-        <span class="gold-bar">$200/session</span>
-      </div>
-      <div class="addon-option">
-        <label><input type="checkbox" name="addons" value="Drone Coverage" /> Drone Coverage</label>
-        <span class="gold-bar">$300 (or $50 w/ photo)</span>
-      </div>
-      <div class="addon-option">
-        <label><input type="checkbox" name="addons" value="Birthday Balloons & Gifts" /> Birthday Balloons & Gifts</label>
-        <span class="gold-bar">$400</span>
-      </div>
-      <div class="addon-option">
-        <label><input type="checkbox" name="addons" value="VIP Host" /> VIP Host</label>
-        <span class="gold-bar">$100/hr</span>
-      </div>
-      <div class="addon-option">
-        <label><input type="checkbox" name="addons" value="Floral Arrangements" /> Floral Arrangements</label>
-        <span class="gold-bar">$200+</span>
-      </div>
-      <div class="addon-option">
-        <label><input type="checkbox" name="addons" value="Luxury Picnic Setup" /> Luxury Picnic Setup</label>
-        <span class="gold-bar">$200+</span>
-      </div>
-      <div class="addon-option">
-        <label><input type="checkbox" name="addons" value="Boat Charter Upgrade" /> Boat Charter Upgrade</label>
-        <span class="gold-bar">$1000</span>
-      </div>
-      <div class="addon-option">
-        <label><input type="checkbox" name="addons" value="Custom Gifting" /> Custom Gifting</label>
-        <span class="gold-bar">$500+</span>
-      </div>
-      <div class="addon-option">
-        <label><input type="checkbox" name="addons" value="Security Add-On" /> Security Add-On</label>
-        <span class="gold-bar">$150/hr (or $100 w/ vehicle)</span>
-      </div>
-  
+      <div class="addon-option"><label><input type="checkbox" name="addons" value="Photographer" /> Photographer</label><span class="gold-bar">$200/hr</span></div>
+      <div class="addon-option"><label><input type="checkbox" name="addons" value="Videographer" /> Videographer</label><span class="gold-bar">$200/session</span></div>
+      <div class="addon-option"><label><input type="checkbox" name="addons" value="Drone" /> Drone Coverage</label><span class="gold-bar">$300</span></div>
+      <div class="addon-option"><label><input type="checkbox" name="addons" value="VIP Host" /> VIP Host</label><span class="gold-bar">$100/hr</span></div>
+      <div class="addon-option"><label><input type="checkbox" name="addons" value="Floral" /> Floral Arrangements</label><span class="gold-bar">$200+</span></div>
+      <div class="addon-option"><label><input type="checkbox" name="addons" value="Luxury Picnic" /> Luxury Picnic</label><span class="gold-bar">$200+</span></div>
+      <div class="addon-option"><label><input type="checkbox" name="addons" value="Custom Gifting" /> Custom Gifting</label><span class="gold-bar">$500+</span></div>
+
       <label>Notes or Special Requests</label>
-      <textarea name="notes" placeholder="Tell us anything special about your request..."></textarea>
-  
+      <textarea name="notes"></textarea>
+
       <div style="text-align: center; margin-top: 2rem;">
         <button type="button" onclick="goToStep2()">Continue to Step 2</button>
-      </div>
+    </div>
     </form>
   </main>
   <div id="step2" class="container">
     <div class="step-title">Step 2: Select Your Vehicle</div>
     <p style="text-align:center; margin-bottom: 2rem; color: #b6f5c2;">
-      Choose from our curated luxury fleet below. Each booking includes a professional driver.
+      Choose from our luxury fleet. Your selection will determine pricing.
     </p>
   
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem;">
   
       <label class="thumbnail">
-        <input type="radio" name="vehicle_choice" value="Rolls Royce Phantom" required />
-        <img src="media/rolls-royce-phantom.jpg" alt="Rolls Royce Phantom">
-        <span>Rolls Royce Phantom</span>
-        <div class="gold-bar">$800 / 2hrs + $250/hr</div>
+        <input type="radio" name="vehicle_choice" value="R8 Audi" required />
+        <img src="media/r8-audi.jpg" alt="R8 Audi">
+        <span>R8 Audi</span>
+        <div class="gold-bar">$1000 (Media Use)</div>
       </label>
   
       <label class="thumbnail">
-        <input type="radio" name="vehicle_choice" value="Rolls Royce Ghost" />
-        <img src="media/rolls-royce-ghost.jpg" alt="Rolls Royce Ghost">
-        <span>Rolls Royce Ghost</span>
-        <div class="gold-bar">$600 / 2hrs + $300/hr</div>
+        <input type="radio" name="vehicle_choice" value="McLaren 570s" />
+        <img src="media/mclaren-570s.jpg" alt="McLaren 570s">
+        <span>McLaren 570s</span>
+        <div class="gold-bar">$1000 (Media Use)</div>
+      </label>
+  
+      <label class="thumbnail">
+        <input type="radio" name="vehicle_choice" value="Escalade ESV" />
+        <img src="media/escalade-esv.jpg" alt="Escalade ESV">
+        <span>Escalade ESV</span>
+        <div class="gold-bar">$400 / 2hrs + $100/hr</div>
+      </label>
+  
+      <label class="thumbnail">
+        <input type="radio" name="vehicle_choice" value="Bentley Bentayga" />
+        <img src="media/bentley-bentayga.jpg" alt="Bentley Bentayga">
+        <span>Bentley Bentayga</span>
+        <div class="gold-bar">Request Quote</div>
       </label>
   
       <label class="thumbnail">
@@ -295,6 +262,27 @@
         <img src="media/rolls-royce-cullinan.jpg" alt="Rolls Royce Cullinan">
         <span>Rolls Royce Cullinan</span>
         <div class="gold-bar">$1000 / 2hrs + $300/hr</div>
+      </label>
+  
+      <label class="thumbnail">
+        <input type="radio" name="vehicle_choice" value="Rolls Royce Phantom" />
+        <img src="media/rolls-royce-phantom.jpg" alt="Rolls Royce Phantom">
+        <span>Rolls Royce Phantom</span>
+        <div class="gold-bar">$800 / 2hrs + $250/hr</div>
+      </label>
+  
+      <label class="thumbnail">
+        <input type="radio" name="vehicle_choice" value="Rolls Royce Wraith" />
+        <img src="media/rolls-royce-wraith.jpg" alt="Rolls Royce Wraith">
+        <span>Rolls Royce Wraith</span>
+        <div class="gold-bar">$600 / 2hrs + $250/hr</div>
+      </label>
+  
+      <label class="thumbnail">
+        <input type="radio" name="vehicle_choice" value="Rolls Royce Ghost" />
+        <img src="media/rolls-royce-ghost.jpg" alt="Rolls Royce Ghost">
+        <span>Rolls Royce Ghost</span>
+        <div class="gold-bar">$600 / 2hrs + $300/hr</div>
       </label>
   
       <label class="thumbnail">
@@ -309,20 +297,6 @@
         <img src="media/maybach-s550.jpg" alt="Maybach S550">
         <span>Maybach S550</span>
         <div class="gold-bar">$500 / 2hrs + $200/hr</div>
-      </label>
-  
-      <label class="thumbnail">
-        <input type="radio" name="vehicle_choice" value="Bentley Bentayga" />
-        <img src="media/bentley-bentayga.jpg" alt="Bentley Bentayga">
-        <span>Bentley Bentayga</span>
-        <div class="gold-bar">Request Quote</div>
-      </label>
-  
-      <label class="thumbnail">
-        <input type="radio" name="vehicle_choice" value="Escalade ESV" />
-        <img src="media/escalade-esv.jpg" alt="Escalade ESV">
-        <span>Escalade ESV</span>
-        <div class="gold-bar">$400 / 2hrs + $100/hr</div>
       </label>
   
       <label class="thumbnail">
@@ -353,46 +327,33 @@
         <div class="gold-bar">$600 / 2hrs + $400/hr</div>
       </label>
   
-      <label class="thumbnail">
-        <input type="radio" name="vehicle_choice" value="Audi R8" />
-        <img src="media/r8-audi.jpg" alt="Audi R8">
-        <span>Audi R8</span>
-        <div class="gold-bar">$1000 (Video Only)</div>
-      </label>
-  
-      <label class="thumbnail">
-        <input type="radio" name="vehicle_choice" value="McLaren 570s" />
-        <img src="media/mclaren-570s.jpg" alt="McLaren 570s">
-        <span>McLaren 570s</span>
-        <div class="gold-bar">$1000 (Video Only)</div>
-      </label>
-  
     </div>
   
-    <div style="text-align:center; margin-top:2rem;">
-      <button type="button" onclick="goToStep3()" style="padding: 1rem 3rem; font-size: 1.2rem; border-radius: 50px; background: #d5a85d; color: #061913; font-weight: bold;">
+    <div style="text-align: center; margin-top: 2rem;">
+      <button type="button" onclick="goToStep3()" style="padding: 1rem 3rem; border-radius: 50px; background: #d5a85d; font-size: 1.1rem; font-weight: bold; border: none; color: #061913;">
         Continue to Step 3
       </button>
     </div>
   </div>
+  
   <div id="step3" class="container">
-    <div class="step-title">Step 3: Final Details & Payment</div>
+    <div class="step-title">Step 3: Final Details & Secure Payment</div>
   
     <p style="text-align:center; font-size: 1rem; color:#b6f5c2;">
-      You’re almost done. Continue as guest or log in to proceed to secure payment.
+      Almost done! You can either log in or continue as guest to complete your reservation.
     </p>
   
     <div class="inline-group" style="flex-wrap: wrap;">
       <!-- LOGIN BLOCK -->
       <div class="half-input" style="min-width:300px;">
         <h3 style="color:#d5a85d;">Log In</h3>
-        <label>Email or Username</label>
+        <label>Username or Email</label>
         <input type="text" name="login_email" placeholder="Enter email or username" />
         <label>Password</label>
         <input type="password" name="login_password" placeholder="Enter password" />
         <p style="font-size: 0.85rem; color:#ccc;">
-          Forgot password? <a href="#" style="color:#b6f5c2;">Reset here</a><br>
-          Don’t have an account? <a href="#" style="color:#b6f5c2;">Create one</a>
+          Forgot your password? <a href="#" style="color:#b6f5c2;">Reset here</a><br>
+          Don't have an account? <a href="#" style="color:#b6f5c2;">Create one</a>
         </p>
       </div>
   
@@ -416,36 +377,47 @@
   
     <!-- DISCLAIMER -->
     <div class="disclaimer">
-      ⚠️ <span class="gold-bar">$250 Clean-Up Fee</span> applies for smoking, spills, or damage.<br><br>
-      💳 You will be taken to a secure Stripe or Interac page after confirmation.<br>
-      🪪 Government-issued ID will be requested after booking.
+      ⚠️ A <span class="gold-bar" style="display:inline-block;">$250 Clean-Up Fee</span> may apply for any damages, spills, or smoking in the vehicle.<br><br>
+      💳 You’ll be prompted to complete secure payment through Stripe or Interac after this step.<br>
+      🪪 We require government-issued ID submitted via email for final confirmation. A secure upload link will be sent.
     </div>
   
-    <!-- AGREEMENT -->
+    <!-- AGREEMENT CHECKBOX -->
     <label class="checkbox" style="margin-top: 1rem;">
       <input type="checkbox" required />
-      I agree to the <a href="#" style="color:#b6f5c2;">terms & conditions</a> and cancellation policy.
+      I agree to the <a href="#" style="color:#b6f5c2;">terms & conditions</a>, cancellation policy, and understand ID will be required prior to confirmation.
     </label>
   
     <!-- SUBMIT BUTTON -->
     <div style="text-align:center; margin-top: 2rem;">
       <button type="submit" style="padding: 1rem 3rem; font-size: 1.2rem; border-radius: 50px; background: #d5a85d; color: #061913; font-weight: bold;">
-        Submit Reservation & Proceed to Stripe
+        Submit Reservation & Pay
       </button>
     </div>
   </div>
+  
+  <footer>
+    <p>&copy; 2025 F1DAN Luxury Concierge. All rights reserved.</p>
+  </footer>
   <script>
     function goToStep2() {
       const form = document.forms['booking'];
-      const requiredFields = ['fullname', 'birthdate', 'phone', 'email', 'booking_date', 'pickup_time', 'pickup_location', 'dropoff_location'];
-  
-      for (let field of requiredFields) {
+      const requiredStep1 = ['fullname', 'birthdate', 'phone', 'email', 'service_type', 'booking_date', 'pickup_time', 'pickup_location', 'dropoff_location', 'guests'];
+      
+      let allFilled = true;
+      for (let field of requiredStep1) {
         if (!form[field].value) {
-          alert("Please complete all required fields in Step 1.");
-          return;
+          allFilled = false;
+          break;
         }
       }
   
+      if (!allFilled) {
+        alert("Please complete all fields in Step 1 before continuing.");
+        return;
+      }
+  
+      // Hide Step 1, show Step 2
       document.getElementById("step2").style.display = "block";
       document.getElementById("step2").scrollIntoView({ behavior: "smooth" });
     }
@@ -453,7 +425,7 @@
     function goToStep3() {
       const vehicleSelected = document.querySelector('input[name="vehicle_choice"]:checked');
       if (!vehicleSelected) {
-        alert("Please select a vehicle.");
+        alert("Please select a vehicle to continue.");
         return;
       }
   
@@ -461,14 +433,12 @@
       document.getElementById("step3").scrollIntoView({ behavior: "smooth" });
     }
   
+    // Hide steps initially
     window.onload = () => {
       document.getElementById("step2").style.display = "none";
       document.getElementById("step3").style.display = "none";
     };
   </script>
-    </main>
-    <footer>
-      <p>&copy; 2025 F1DAN Luxury Concierge. All rights reserved.</p>
-    </footer>
-  </body>
-  </html>
+  
+</body>
+</html>
