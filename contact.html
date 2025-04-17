@@ -460,38 +460,55 @@
       </button>
     </div>
   </div>
-  <script>
-    function goToStep2() {
-      const form = document.forms['booking'];
-      const requiredFields = ['fullname', 'birthdate', 'phone', 'email', 'booking_date', 'pickup_time', 'pickup_location', 'dropoff_location'];
-  
-      for (let field of requiredFields) {
-        if (!form[field].value) {
-          alert("Please complete all required fields in Step 1.");
-          return;
-        }
-      }
-  
-      document.getElementById("step2").style.display = "block";
-      document.getElementById("step2").scrollIntoView({ behavior: "smooth" });
-    }
-  
-    function goToStep3() {
-      const vehicleSelected = document.querySelector('input[name="vehicle_choice"]:checked');
-      if (!vehicleSelected) {
-        alert("Please select a vehicle.");
+ <!-- Google Maps Autocomplete + Stripe Logic + Step Logic -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfFZ19EVmycMv9Syfcv_5M0tOv7H9GlRs&libraries=places&callback=initAutocomplete" async defer></script>
+
+<script>
+  function initAutocomplete() {
+    const options = {
+      types: ['address'],
+      componentRestrictions: { country: "ca" }
+    };
+
+    const pickup = document.getElementsByName("pickup_location")[0];
+    const dropoff = document.getElementsByName("dropoff_location")[0];
+
+    if (pickup) new google.maps.places.Autocomplete(pickup, options);
+    if (dropoff) new google.maps.places.Autocomplete(dropoff, options);
+  }
+
+  function goToStep2() {
+    const form = document.forms['booking'];
+    const requiredFields = ['fullname', 'birthdate', 'phone', 'email', 'booking_date', 'pickup_time', 'pickup_location', 'dropoff_location'];
+
+    for (let field of requiredFields) {
+      if (!form[field].value) {
+        alert("Please complete all required fields in Step 1.");
         return;
       }
-  
-      document.getElementById("step3").style.display = "block";
-      document.getElementById("step3").scrollIntoView({ behavior: "smooth" });
     }
-  
-    window.onload = () => {
-      document.getElementById("step2").style.display = "none";
-      document.getElementById("step3").style.display = "none";
-    };
-  </script>
+
+    document.getElementById("step2").style.display = "block";
+    document.getElementById("step2").scrollIntoView({ behavior: "smooth" });
+  }
+
+  function goToStep3() {
+    const vehicleSelected = document.querySelector('input[name="vehicle_choice"]:checked');
+    if (!vehicleSelected) {
+      alert("Please select a vehicle.");
+      return;
+    }
+
+    document.getElementById("step3").style.display = "block";
+    document.getElementById("step3").scrollIntoView({ behavior: "smooth" });
+  }
+
+  window.onload = () => {
+    document.getElementById("step2").style.display = "none";
+    document.getElementById("step3").style.display = "none";
+  };
+</script>
+
     </main>
     <footer>
       <p>&copy; 2025 F1DAN Luxury Concierge. All rights reserved.</p>
