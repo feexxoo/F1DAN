@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Now | F1DAN</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <style>
+    body { margin: 0; font-family: 'Poppins', sans-serif; background: #061913; color: #e0ffe5; }
+    header, footer { background-color: #0e241a; padding: 1.2rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    header img { height: 50px; }
+    nav a { color: #e2ffe0; margin-left: 20px; text-decoration: none; font-weight: bold; font-size: 1rem; }
+    nav a:hover { color: #b2ffc0; }
+    .container { max-width: 900px; margin: 3rem auto; background: #0e241a; padding: 2.5rem; border-radius: 14px; box-shadow: 0 0 25px rgba(0,0,0,0.4); }
+    h1 { text-align: center; color: #b6f5c2; margin-bottom: 2rem; font-family: 'Playfair Display', serif; font-size: 2rem; }
+    label { color: #f4f4f4; display: block; margin-bottom: 0.5rem; font-weight: 500; }
+    input, select, textarea { width: 100%; padding: 0.85rem; border-radius: 10px; border: none; background: #1b3c2d; color: #fff; margin-bottom: 1.4rem; font-size: 1rem; font-family: 'Poppins', sans-serif; }
+    input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(1); }
+    textarea { resize: vertical; min-height: 120px; }
+    button { width: 100%; padding: 1rem; background-color: #d5a85d; color: #061913; font-weight: bold; font-size: 1rem; border: none; border-radius: 10px; cursor: pointer; }
+    button:hover { background-color: #e2bb6d; }
+    .checkbox { display: flex; align-items: center; color: #f4f4f4; font-size: 0.95rem; }
+    .checkbox input { margin-right: 10px; }
+    .disclaimer { font-size: 0.95rem; color: #bbb; margin-top: -0.5rem; margin-bottom: 1.5rem; }
+    .step-title { font-size: 1.2rem; font-weight: bold; color: #d5a85d; margin: 2rem 0 1rem; text-align: center; text-transform: uppercase; }
+    .thumbnail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+    .thumbnail { border-radius: 12px; overflow: hidden; box-shadow: 0 0 12px rgba(0,0,0,0.5); cursor: pointer; transition: transform 0.3s ease; text-align: center; background: #142c22; }
+    .thumbnail:hover { transform: scale(1.05); }
+    .thumbnail img { width: 100%; height: 120px; object-fit: cover; display: block; border-bottom: 1px solid #1b3c2d; }
+    .thumbnail span { display: block; color: #ccc; padding: 0.6rem; font-size: 0.95rem; }
+    .duration-info { text-align: center; font-size: 1rem; color: #b6f5c2; margin-bottom: 1rem; }
+    .hidden { display: none; }
+    .progress-bar { display: flex; margin-bottom: 2rem; overflow: hidden; border-radius: 10px; }
+    .progress-bar div { flex: 1; padding: 0.5rem; text-align: center; background: #1b3c2d; color: #ccc; }
+    .progress-bar .active { background: #d5a85d; color: #061913; font-weight: bold; }
+    .hour-btns { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1rem; }
+    .hour-btns button { width: 40px; height: 40px; font-size: 1.2rem; border-radius: 50%; border: none; background: #d5a85d; color: #061913; cursor: pointer; font-weight: bold; }
+    .total-price { text-align: center; color: #b6f5c2; font-size: 1.2rem; margin-top: 1rem; font-weight: bold; }
+    @media (max-width: 600px) { .container { padding: 1.5rem; } }
+  </style>
+</head>
+<body>
+<!-- full updated content continues below -->
+  <script>
+    function validateStep1AndShowStep2() {
+      const form = document.forms['booking'];
+      const dob = new Date(form['birthdate'].value);
+      const year = dob.getFullYear();
+      const age = new Date().getFullYear() - year;
+      if (age < 23 || age > 85) {
+        alert("Booking is only available for clients aged 23 to 85.");
+        return false;
+      }
+      const requiredFields = ['fullname', 'birthdate', 'email', 'phone', 'service_type', 'booking_date', 'pickup_time', 'pickup_location', 'dropoff_location', 'guests'];
+      for (const name of requiredFields) {
+        if (!form[name].value) {
+          alert("Please complete all fields in Step 1 before proceeding.");
+          return false;
+        }
+      }
+      document.getElementById('step2').classList.remove('hidden');
+      return false;
+    }
+    function validateStep2AndShowStep3() {
+      const form = document.forms['booking'];
+      if (!form['vehicle_choice'].value) {
+        alert("Please select a vehicle to continue.");
+        return false;
+      }
+      document.getElementById('step3').classList.remove('hidden');
+      return false;
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <img src="logo.jpg" alt="F1DAN Logo" />
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="chauffeured-cars.html">Chauffeured Services</a>
+      <a href="music-videos&photoshoots.html">Music Videos & Photoshoots</a>
+      <a href="tours.html">City Tours</a>
+      <a href="fleet.html">Fleet</a>
+      <a href="boats.html">Luxury Boats</a>
+      <a href="event-venues.html">Event Venues</a>
+      <a href="contact.html">Contact</a>
+    </nav>    
+  </header>
+  <main class="container">
+    <h1>Reserve Your Luxury Experience</h1>
+    <form name="booking" method="POST" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return validateStep1AndShowStep2()">
+      <input type="hidden" name="form-name" value="booking">
+      <p hidden><label>Don’t fill this out: <input name="bot-field"></label></p>
+
+      <div class="step-title">Step 1: Booking Details</div>
+      <label>Full Name</label><input type="text" name="fullname" required />
+      <label>Date of Birth</label><input type="date" name="birthdate" required />
+      <label>Email Address</label><input type="email" name="email" required />
+      <label>Phone Number</label><input type="tel" name="phone" required />
+      <label>Service Type</label>
+      <select name="service_type" required>
+        <option value="">Select Service</option>
+        <option>Hourly Chauffeured</option>
+        <option>Point to Point</option>
+        <option>Airport Pickup / Drop</option>
+        <option>Wedding Day</option>
+        <option>Music Video</option>
+        <option>City Tour</option>
+        <option>Luxury Boat Charter</option>
+        <option>Autobus</option>
+      </select>
+      <label>Desired Booking Date</label><input type="date" name="booking_date" required />
+      <label>Pickup Time</label><input type="time" name="pickup_time" required />
+      <label>Pickup Location</label><input type="text" name="pickup_location" required />
+      <label>Drop-off Location</label><input type="text" name="dropoff_location" required />
+      <label>Number of Guests</label><input type="number" name="guests" min="1" max="30" required />
+
+      <label>Add-on Services</label>
+      <select name="addons" multiple>
+        <option>Photographer</option>
+        <option>Videographer</option>
+        <option>Drone Coverage</option>
+        <option>Birthday Balloons & Gifts</option>
+        <option>VIP Host</option>
+        <option>Floral Arrangements</option>
+        <option>Luxury Picnic Setup</option>
+        <option>Boat Charter Upgrade</option>
+      </select>
+
+      <label>Notes or Special Requests</label>
+      <textarea name="notes"></textarea>
+
+      <div style="text-align: center; margin-top: 2rem;">
+        <button onclick="return validateStep1AndShowStep2()" style="padding: 1rem 3rem; font-size: 1.1rem; border-radius: 50px; background: #d5a85d; color: #061913; font-weight: bold; border: none; cursor: pointer;">
+          Continue to Step 2
+        </button>
+      </div>
+
+      <div id="step2" class="hidden">
+        <div class="step-title">Step 2: Choose Your Vehicle</div>
+        <div class="thumbnail-grid">
+          <div class="thumbnail"><img src="media/rolls-royce-phantom.jpg" alt="Rolls Royce Phantom"><span>$800 / 2hrs + $250/hr</span></div>
+          <div class="thumbnail"><img src="media/rolls-royce-ghost.jpg" alt="Rolls Royce Ghost"><span>$600 / 2hrs + $300/hr</span></div>
+          <div class="thumbnail"><img src="media/rolls-royce-cullinan.jpg" alt="Rolls Royce Cullinan"><span>$1000 / 2hrs + $300/hr</span></div>
+          <div class="thumbnail"><img src="media/maybach-s550.jpg" alt="Maybach S550"><span>$500 / 2hrs + $200/hr</span></div>
+          <div class="thumbnail"><img src="media/maybach-gls600.jpg" alt="Maybach GLS 600"><span>$600 / 2hrs + $250/hr</span></div>
+          <div class="thumbnail"><img src="media/maybach-sprinter.jpg" alt="Maybach Sprinter"><span>$600 / 2hrs + $400/2hrs</span></div>
+          <div class="thumbnail"><img src="media/mercedes-sprinter.jpg" alt="Mercedes Sprinter"><span>$600 / 2hrs + $400/2hrs</span></div>
+          <div class="thumbnail"><img src="media/gmc-yukon-denali-ultimate.jpg" alt="GMC Yukon Denali"><span>$400 / 2hrs + $100/hr</span></div>
+          <div class="thumbnail"><img src="media/lincoln-navigator.jpg" alt="Lincoln Navigator"><span>$400 / 2hrs + $100/hr</span></div>
+          <div class="thumbnail"><img src="media/bentley-bentayga.jpg" alt="Bentley Bentayga"><span>Request Quote</span></div>
+          <div class="thumbnail"><img src="media/r8-audi.jpg" alt="Audi R8"><span>$1000 (videos only)</span></div>
+          <div class="thumbnail"><img src="media/mclaren-570s.jpg" alt="McLaren 570s"><span>$1000 (videos only)</span></div>
+          <div class="thumbnail"><img src="media/escalade-esv.jpg" alt="Escalade ESV"><span>$400 / 2hrs + $100/hr</span></div>
+        </div>
+        <label>Select Preferred Vehicle</label>
+        <select name="vehicle_choice" required>
+          <option value="">Select a vehicle</option>
+          <option>Rolls Royce Phantom</option>
+          <option>Rolls Royce Ghost</option>
+          <option>Rolls Royce Wraith</option>
+          <option>Rolls Royce Cullinan</option>
+          <option>Maybach S550</option>
+          <option>Maybach GLS 600</option>
+          <option>Maybach Sprinter</option>
+          <option>Mercedes Sprinter</option>
+          <option>GMC Yukon Denali</option>
+          <option>Lincoln Navigator</option>
+          <option>Bentley Bentayga</option>
+          <option>Audi R8</option>
+          <option>McLaren 570s</option>
+          <option>Escalade ESV</option>
+        </select>
+        <button onclick="return validateStep2AndShowStep3()">Continue to Step 3</button>
+      </div>
+
+      <div id="step3" class="hidden">
+        <div class="step-title">Step 3: Final Details</div>
+        <p style="text-align:center; font-size: 1rem; margin-bottom: 1rem;">Your total will be calculated and confirmed upon booking review.</p>
+        <p style="text-align:center; color: #b6f5c2; margin-bottom: 1rem;">Please log in or continue as guest to complete your reservation.</p>
+        <div style="display:flex; flex-wrap: wrap; gap:2rem;">
+          <div style="flex:1; min-width:250px;">
+            <h3 style="color:#d5a85d;">Log In to Your Account</h3>
+            <label>Email or Username</label><input type="text" name="login_email" />
+            <label>Password</label><input type="password" name="login_password" />
+            <p style="font-size:0.9rem; margin-top:-0.8rem; color:#ccc;">Forgot password? <a href="#" style="color:#b6f5c2;">Reset here</a></p>
+            <p style="font-size:0.9rem;">Don’t have an account? <a href="#" style="color:#b6f5c2;">Register now</a></p>
+          </div>
+          <div style="flex:1; min-width:250px;">
+            <h3 style="color:#d5a85d;">Continue as Guest</h3>
+            <label>First Name</label><input type="text" name="guest_firstname" required />
+            <label>Last Name</label><input type="text" name="guest_lastname" required />
+            <label>Phone Number</label><input type="tel" name="guest_phone" required />
+            <label>Email Address</label><input type="email" name="guest_email" required />
+            <label class="checkbox">
+              <input type="checkbox" name="interac_option" /> I would like to pay via Interac.
+            </label>
+          </div>
+        </div>
+        <p class="disclaimer">⚠️ A <strong style="color:#d5a85d;">$250 clean-up fee</strong> may apply for smoking, spills, or any damages during service. Full payment is due after confirmation. ID verification will be requested via email before final approval.</p>
+        <label class="checkbox">
+          <input type="checkbox" required /> I agree to the terms & conditions, cancellation policy, and understand ID will be requested separately before booking is finalized.
+        </label>
+        <button type="submit">Submit Reservation Request</button>
+      </div>
+    </form>
+  </main>
+  <footer>
+    <p>&copy; 2025 F1DAN Luxury Concierge. All rights reserved.</p>
+  </footer>
+</body>
+</html>
