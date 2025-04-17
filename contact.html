@@ -127,9 +127,27 @@
       margin-bottom: 1.5rem;
     }
   </style>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+<script>
+  function initAutocomplete() {
+    const pickup = new google.maps.places.Autocomplete(document.getElementById('pickup_location'));
+    const dropoff = new google.maps.places.Autocomplete(document.getElementById('dropoff_location'));
+
+    pickup.addListener('place_changed', () => {
+      const place = pickup.getPlace();
+      document.getElementById('pickup_map').src = `https://maps.google.com/maps?q=${encodeURIComponent(place.formatted_address)}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
+    });
+
+    dropoff.addListener('place_changed', () => {
+      const place = dropoff.getPlace();
+      document.getElementById('dropoff_map').src = `https://maps.google.com/maps?q=${encodeURIComponent(place.formatted_address)}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
+    });
+  }
+</script>
+
 </head>
 
-<body>
+<body onload="initAutocomplete()">
   <header>
     <img src="logo.jpg" alt="F1DAN Logo" />
     <nav>
@@ -167,6 +185,14 @@
 
       <label>Email Address</label>
       <input type="email" name="email" required />
+
+      <label>Pickup Location</label>
+<input id="pickup_location" type="text" name="pickup_location" placeholder="Search pickup address" required />
+<iframe id="pickup_map" class="map-frame" src="https://maps.google.com/maps?q=Toronto&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+
+<label>Drop-off Location</label>
+<input id="dropoff_location" type="text" name="dropoff_location" placeholder="Search drop-off address" required />
+<iframe id="dropoff_map" class="map-frame" src="https://maps.google.com/maps?q=Toronto&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
 
       <label>Service Type</label>
       <div class="addon-option">
