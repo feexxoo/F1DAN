@@ -217,8 +217,8 @@
       <textarea name="notes"></textarea>
 
       <div style="text-align: center; margin-top: 2rem;">
-        <button type="submit">Continue to Step 2</button>
-      </div>
+        <button type="button" onclick="goToStep2()">Continue to Step 2</button>
+    </div>
     </form>
   </main>
   <div id="step2" class="container">
@@ -321,7 +321,7 @@
     </div>
   
     <div style="text-align: center; margin-top: 2rem;">
-      <button type="submit">Continue to Step 3</button>
+        <button type="button" onclick="goToStep3()">Continue to Step 3</button>
     </div>
   </div>
   <div id="step3" class="container">
@@ -387,5 +387,46 @@
   <footer>
     <p>&copy; 2025 F1DAN Luxury Concierge. All rights reserved.</p>
   </footer>
+  <script>
+    function goToStep2() {
+      const form = document.forms['booking'];
+      const requiredStep1 = ['fullname', 'birthdate', 'phone', 'email', 'service_type', 'booking_date', 'pickup_time', 'pickup_location', 'dropoff_location', 'guests'];
+      
+      let allFilled = true;
+      for (let field of requiredStep1) {
+        if (!form[field].value) {
+          allFilled = false;
+          break;
+        }
+      }
+  
+      if (!allFilled) {
+        alert("Please complete all fields in Step 1 before continuing.");
+        return;
+      }
+  
+      // Hide Step 1, show Step 2
+      document.getElementById("step2").style.display = "block";
+      document.getElementById("step2").scrollIntoView({ behavior: "smooth" });
+    }
+  
+    function goToStep3() {
+      const vehicleSelected = document.querySelector('input[name="vehicle_choice"]:checked');
+      if (!vehicleSelected) {
+        alert("Please select a vehicle to continue.");
+        return;
+      }
+  
+      document.getElementById("step3").style.display = "block";
+      document.getElementById("step3").scrollIntoView({ behavior: "smooth" });
+    }
+  
+    // Hide steps initially
+    window.onload = () => {
+      document.getElementById("step2").style.display = "none";
+      document.getElementById("step3").style.display = "none";
+    };
+  </script>
+  
 </body>
 </html>
