@@ -148,7 +148,7 @@
 </head>
 
 <body onload="initAutocomplete()">
-  <header>
+    <header>
     <img src="logo.jpg" alt="F1DAN Logo" />
     <nav>
       <a href="index.html">Home</a>
@@ -513,5 +513,15 @@
     <footer>
       <p>&copy; 2025 F1DAN Luxury Concierge. All rights reserved.</p>
     </footer>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqUoYwmP-1PGIULIaJdj_pcv7gCnn8Oys&libraries=places&callback=initAutocomplete" async defer></script>
+<script>
+  function initAutocomplete() {
+    const pickupInput = document.getElementById("pickup_location");
+    const dropoffInput = document.getElementById("dropoff_location");
+
+    if (pickupInput) new google.maps.places.Autocomplete(pickupInput);
+    if (dropoffInput) new google.maps.places.Autocomplete(dropoffInput);
+  }
+</script>
   </body>
   </html>
