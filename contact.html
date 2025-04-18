@@ -464,50 +464,37 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfFZ19EVmycMv9Syfcv_5M0tOv7H9GlRs&libraries=places&callback=initAutocomplete" async defer></script>
 
 <script>
-  function initAutocomplete() {
-    const options = {
-      types: ['address'],
-      componentRestrictions: { country: "ca" }
-    };
-
-    const pickup = document.getElementsByName("pickup_location")[0];
-    const dropoff = document.getElementsByName("dropoff_location")[0];
-
-    if (pickup) new google.maps.places.Autocomplete(pickup, options);
-    if (dropoff) new google.maps.places.Autocomplete(dropoff, options);
-  }
-
-  function goToStep2() {
-    const form = document.forms['booking'];
-    const requiredFields = ['fullname', 'birthdate', 'phone', 'email', 'booking_date', 'pickup_time', 'pickup_location', 'dropoff_location'];
-
-    for (let field of requiredFields) {
-      if (!form[field].value) {
-        alert("Please complete all required fields in Step 1.");
-        return;
-      }
+    function initAutocomplete() {
+      const options = {
+        types: ['address'],
+        componentRestrictions: { country: "ca" }
+      };
+  
+      const pickupInput = document.getElementById("pickup_location");
+      const dropoffInput = document.getElementById("dropoff_location");
+  
+      const pickupMap = document.getElementById("pickup_map");
+      const dropoffMap = document.getElementById("dropoff_map");
+  
+      const pickupAutocomplete = new google.maps.places.Autocomplete(pickupInput, options);
+      const dropoffAutocomplete = new google.maps.places.Autocomplete(dropoffInput, options);
+  
+      pickupAutocomplete.addListener("place_changed", function () {
+        const place = pickupAutocomplete.getPlace();
+        if (place && place.formatted_address) {
+          pickupMap.src = `https://maps.google.com/maps?q=${encodeURIComponent(place.formatted_address)}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
+        }
+      });
+  
+      dropoffAutocomplete.addListener("place_changed", function () {
+        const place = dropoffAutocomplete.getPlace();
+        if (place && place.formatted_address) {
+          dropoffMap.src = `https://maps.google.com/maps?q=${encodeURIComponent(place.formatted_address)}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
+        }
+      });
     }
-
-    document.getElementById("step2").style.display = "block";
-    document.getElementById("step2").scrollIntoView({ behavior: "smooth" });
-  }
-
-  function goToStep3() {
-    const vehicleSelected = document.querySelector('input[name="vehicle_choice"]:checked');
-    if (!vehicleSelected) {
-      alert("Please select a vehicle.");
-      return;
-    }
-
-    document.getElementById("step3").style.display = "block";
-    document.getElementById("step3").scrollIntoView({ behavior: "smooth" });
-  }
-
-  window.onload = () => {
-    document.getElementById("step2").style.display = "none";
-    document.getElementById("step3").style.display = "none";
-  };
-</script>
+  </script>
+  
 
     </main>
     <footer>
@@ -524,4 +511,6 @@
   }
 </script>
   </body>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqUoYwmP-1PGIULIaJdj_pcv7gCnn8Oys&libraries=places&callback=initAutocomplete" async defer></script>
+
   </html>
