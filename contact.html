@@ -6,7 +6,6 @@
   <title>Book Now | F1DAN</title>
   <link rel="icon" href="favicon.ico" />
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -127,23 +126,39 @@
       margin-bottom: 1.5rem;
     }
   </style>
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqUoYwmP-1PGIULIaJdj_pcv7gCnn8Oys&libraries=places&callback=initAutocomplete" async defer></script>
+<!-- Google Maps Autocomplete + Autoload -->
 <script>
-  function initAutocomplete() {
-    const pickup = new google.maps.places.Autocomplete(document.getElementById('pickup_location'));
-    const dropoff = new google.maps.places.Autocomplete(document.getElementById('dropoff_location'));
-
-    pickup.addListener('place_changed', () => {
-      const place = pickup.getPlace();
-      document.getElementById('pickup_map').src = `https://maps.google.com/maps?q=${encodeURIComponent(place.formatted_address)}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
-    });
-
-    dropoff.addListener('place_changed', () => {
-      const place = dropoff.getPlace();
-      document.getElementById('dropoff_map').src = `https://maps.google.com/maps?q=${encodeURIComponent(place.formatted_address)}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
-    });
-  }
-</script>
+    function initAutocomplete() {
+      const options = {
+        types: ['address'],
+        componentRestrictions: { country: "ca" }
+      };
+  
+      const pickupInput = document.getElementById("pickup_location");
+      const dropoffInput = document.getElementById("dropoff_location");
+  
+      const pickupMap = document.getElementById("pickup_map");
+      const dropoffMap = document.getElementById("dropoff_map");
+  
+      const pickupAutocomplete = new google.maps.places.Autocomplete(pickupInput, options);
+      const dropoffAutocomplete = new google.maps.places.Autocomplete(dropoffInput, options);
+  
+      pickupAutocomplete.addListener("place_changed", function () {
+        const place = pickupAutocomplete.getPlace();
+        if (place && place.formatted_address) {
+          pickupMap.src = `https://maps.google.com/maps?q=${encodeURIComponent(place.formatted_address)}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
+        }
+      });
+  
+      dropoffAutocomplete.addListener("place_changed", function () {
+        const place = dropoffAutocomplete.getPlace();
+        if (place && place.formatted_address) {
+          dropoffMap.src = `https://maps.google.com/maps?q=${encodeURIComponent(place.formatted_address)}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
+        }
+      });
+    }
+  </script>  
 
 </head>
 
@@ -460,57 +475,4 @@
       </button>
     </div>
   </div>
- <!-- Google Maps Autocomplete + Stripe Logic + Step Logic -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfFZ19EVmycMv9Syfcv_5M0tOv7H9GlRs&libraries=places&callback=initAutocomplete" async defer></script>
-
-<script>
-    function initAutocomplete() {
-      const options = {
-        types: ['address'],
-        componentRestrictions: { country: "ca" }
-      };
-  
-      const pickupInput = document.getElementById("pickup_location");
-      const dropoffInput = document.getElementById("dropoff_location");
-  
-      const pickupMap = document.getElementById("pickup_map");
-      const dropoffMap = document.getElementById("dropoff_map");
-  
-      const pickupAutocomplete = new google.maps.places.Autocomplete(pickupInput, options);
-      const dropoffAutocomplete = new google.maps.places.Autocomplete(dropoffInput, options);
-  
-      pickupAutocomplete.addListener("place_changed", function () {
-        const place = pickupAutocomplete.getPlace();
-        if (place && place.formatted_address) {
-          pickupMap.src = `https://maps.google.com/maps?q=${encodeURIComponent(place.formatted_address)}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
-        }
-      });
-  
-      dropoffAutocomplete.addListener("place_changed", function () {
-        const place = dropoffAutocomplete.getPlace();
-        if (place && place.formatted_address) {
-          dropoffMap.src = `https://maps.google.com/maps?q=${encodeURIComponent(place.formatted_address)}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
-        }
-      });
-    }
-  </script>
-  
-
-    </main>
-    <footer>
-      <p>&copy; 2025 F1DAN Luxury Concierge. All rights reserved.</p>
-    </footer>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqUoYwmP-1PGIULIaJdj_pcv7gCnn8Oys&libraries=places&callback=initAutocomplete" async defer></script>
-<script>
-  function initAutocomplete() {
-    const pickupInput = document.getElementById("pickup_location");
-    const dropoffInput = document.getElementById("dropoff_location");
-
-    if (pickupInput) new google.maps.places.Autocomplete(pickupInput);
-    if (dropoffInput) new google.maps.places.Autocomplete(dropoffInput);
-  }
-</script>
-  </body>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqUoYwmP-1PGIULIaJdj_pcv7gCnn8Oys&libraries=places&callback=initAutocomplete" async defer></script>
-
   </html>
