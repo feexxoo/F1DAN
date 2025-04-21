@@ -308,107 +308,192 @@
         <button type="button" onclick="goToStep2()">Continue to Step 2</button>
       </div>
     </form>
+    <script>
+        function goToStep2() {
+          // Validate Step 1 fields
+          const requiredFields = ['fullname', 'birthdate', 'phone', 'email', 'pickup_location', 'dropoff_location', 'booking_date', 'pickup_time'];
+          let allValid = true;
+      
+          for (let name of requiredFields) {
+            const el = document.querySelector(`[name="${name}"]`);
+            if (!el || !el.value.trim()) {
+              allValid = false;
+              el.style.border = "2px solid red";
+            } else {
+              el.style.border = "";
+            }
+          }
+      
+          const serviceSelected = document.querySelector('input[name="service_type"]:checked');
+          if (!serviceSelected) {
+            alert("Please select a service type.");
+            allValid = false;
+          }
+      
+          if (allValid) {
+            document.getElementById("step2").style.display = "block";
+            window.scrollTo({ top: document.getElementById("step2").offsetTop, behavior: "smooth" });
+          }
+        }
+      
+        function goToStep3() {
+          const vehicleSelected = document.querySelector('input[name="vehicle_choice"]:checked');
+          if (!vehicleSelected) {
+            alert("Please select a vehicle before continuing.");
+            return;
+          }
+          document.getElementById("step3").style.display = "block";
+          window.scrollTo({ top: document.getElementById("step3").offsetTop, behavior: "smooth" });
+        }
+      
+        // Hide step 2 and 3 by default
+        window.onload = () => {
+          document.getElementById("step2").style.display = "none";
+          document.getElementById("step3").style.display = "none";
+        };
+
+    </script>      
   </main>
   <div id="step2" class="container">
     <div class="step-title">Step 2: Select Your Vehicle</div>
     <p style="text-align:center; margin-bottom: 2rem; color: #b6f5c2;">
       Choose from our curated luxury fleet below. Each booking includes a professional driver.
-    </p>
-  
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem;">
-  
-      <label class="thumbnail">
-        <input type="radio" name="vehicle_choice" value="Rolls Royce Phantom" required />
-        <img src="media/rolls-royce-phantom.jpg" alt="Rolls Royce Phantom">
-        <span>Rolls Royce Phantom</span>
-        <div class="gold-bar">$800 / 2hrs + $250/hr</div>
-      </label>
-  
-      <label class="thumbnail">
-        <input type="radio" name="vehicle_choice" value="Rolls Royce Ghost" />
-        <img src="media/rolls-royce-ghost.jpg" alt="Rolls Royce Ghost">
-        <span>Rolls Royce Ghost</span>
-        <div class="gold-bar">$600 / 2hrs + $300/hr</div>
-      </label>
-  
-      <label class="thumbnail">
-        <input type="radio" name="vehicle_choice" value="Rolls Royce Cullinan" />
-        <img src="media/rolls-royce-cullinan.jpg" alt="Rolls Royce Cullinan">
-        <span>Rolls Royce Cullinan</span>
-        <div class="gold-bar">$1000 / 2hrs + $300/hr</div>
-      </label>
-  
-      <label class="thumbnail">
-        <input type="radio" name="vehicle_choice" value="Maybach GLS 600" />
-        <img src="media/maybach-gls600.jpg" alt="Maybach GLS 600">
-        <span>Maybach GLS 600</span>
-        <div class="gold-bar">$600 / 2hrs + $250/hr</div>
-      </label>
-  
-      <label class="thumbnail">
-        <input type="radio" name="vehicle_choice" value="Maybach S550" />
-        <img src="media/maybach-s550.jpg" alt="Maybach S550">
-        <span>Maybach S550</span>
-        <div class="gold-bar">$500 / 2hrs + $200/hr</div>
-      </label>
-  
-      <label class="thumbnail">
-        <input type="radio" name="vehicle_choice" value="Bentley Bentayga" />
-        <img src="media/bentley-bentayga.jpg" alt="Bentley Bentayga">
-        <span>Bentley Bentayga</span>
-        <div class="gold-bar">Request Quote</div>
-      </label>
-  
-      <label class="thumbnail">
-        <input type="radio" name="vehicle_choice" value="Escalade ESV" />
-        <img src="media/escalade-esv.jpg" alt="Escalade ESV">
-        <span>Escalade ESV</span>
-        <div class="gold-bar">$400 / 2hrs + $100/hr</div>
-      </label>
-  
-      <label class="thumbnail">
-        <input type="radio" name="vehicle_choice" value="GMC Yukon Denali Ultimate" />
-        <img src="media/gmc-yukon-denali-ultimate.jpg" alt="GMC Yukon Denali">
-        <span>GMC Yukon Denali</span>
-        <div class="gold-bar">$400 / 2hrs + $100/hr</div>
-      </label>
-  
-      <label class="thumbnail">
-        <input type="radio" name="vehicle_choice" value="Lincoln Navigator" />
-        <img src="media/lincoln-navigator.jpg" alt="Lincoln Navigator">
-        <span>Lincoln Navigator</span>
-        <div class="gold-bar">$400 / 2hrs + $100/hr</div>
-      </label>
-  
-      <label class="thumbnail">
-        <input type="radio" name="vehicle_choice" value="Maybach Sprinter" />
-        <img src="media/maybach-sprinter.jpg" alt="Maybach Sprinter">
-        <span>Maybach Sprinter</span>
-        <div class="gold-bar">$600 / 2hrs + $400/hr</div>
-      </label>
-  
-      <label class="thumbnail">
-        <input type="radio" name="vehicle_choice" value="Mercedes Sprinter" />
-        <img src="media/mercedes-sprinter.jpg" alt="Mercedes Sprinter">
-        <span>Mercedes Sprinter</span>
-        <div class="gold-bar">$600 / 2hrs + $400/hr</div>
-      </label>
-  
-      <label class="thumbnail">
-        <input type="radio" name="vehicle_choice" value="Audi R8" />
-        <img src="media/r8-audi.jpg" alt="Audi R8">
-        <span>Audi R8</span>
-        <div class="gold-bar">$1000 (Video Only)</div>
-      </label>
-  
-      <label class="thumbnail">
-        <input type="radio" name="vehicle_choice" value="McLaren 570s" />
-        <img src="media/mclaren-570s.jpg" alt="McLaren 570s">
-        <span>McLaren 570s</span>
-        <div class="gold-bar">$1000 (Video Only)</div>
-      </label>
-  
-    </div>
+    </p>  
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem;">       
+ <style>
+  .vehicle-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+  .vehicle-option {
+    background: #13291f;
+    border-radius: 16px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+  }
+  .vehicle-option:hover {
+    transform: translateY(-5px);
+  }
+  .vehicle-option input {
+    display: none;
+  }
+  .vehicle-option img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-bottom: 1px solid #222;
+  }
+  .vehicle-option span {
+    display: block;
+    padding: 0.8rem 0 0.2rem;
+    font-weight: bold;
+    color: #e0ffe5;
+    font-size: 1rem;
+  }
+  .vehicle-option .gold-bar {
+    margin: 0.6rem auto 1rem;
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+</style>
+
+<div class="vehicle-grid">
+  <label class="vehicle-option">
+    <input type="radio" name="vehicle_choice" value="Rolls Royce Phantom" required />
+    <img src="media/rolls-royce-phantom.jpg" alt="Rolls Royce Phantom">
+    <span>Rolls Royce Phantom</span>
+    <div class="gold-bar">$800 / 2hrs + $250/hr</div>
+  </label>
+
+  <label class="vehicle-option">
+    <input type="radio" name="vehicle_choice" value="Rolls Royce Ghost" />
+    <img src="media/rolls-royce-ghost.jpg" alt="Rolls Royce Ghost">
+    <span>Rolls Royce Ghost</span>
+    <div class="gold-bar">$600 / 2hrs + $300/hr</div>
+  </label>
+
+  <label class="vehicle-option">
+    <input type="radio" name="vehicle_choice" value="Rolls Royce Cullinan" />
+    <img src="media/rolls-royce-cullinan.jpg" alt="Rolls Royce Cullinan">
+    <span>Rolls Royce Cullinan</span>
+    <div class="gold-bar">$1000 / 2hrs + $300/hr</div>
+  </label>
+
+  <label class="vehicle-option">
+    <input type="radio" name="vehicle_choice" value="Maybach GLS 600" />
+    <img src="media/maybach-gls600.jpg" alt="Maybach GLS 600">
+    <span>Maybach GLS 600</span>
+    <div class="gold-bar">$600 / 2hrs + $250/hr</div>
+  </label>
+
+  <label class="vehicle-option">
+    <input type="radio" name="vehicle_choice" value="Maybach S550" />
+    <img src="media/maybach-s550.jpg" alt="Maybach S550">
+    <span>Maybach S550</span>
+    <div class="gold-bar">$500 / 2hrs + $200/hr</div>
+  </label>
+
+  <label class="vehicle-option">
+    <input type="radio" name="vehicle_choice" value="Bentley Bentayga" />
+    <img src="media/bentley-bentayga.jpg" alt="Bentley Bentayga">
+    <span>Bentley Bentayga</span>
+    <div class="gold-bar">Request Quote</div>
+  </label>
+
+  <label class="vehicle-option">
+    <input type="radio" name="vehicle_choice" value="Escalade ESV" />
+    <img src="media/escalade-esv.jpg" alt="Escalade ESV">
+    <span>Escalade ESV</span>
+    <div class="gold-bar">$400 / 2hrs + $100/hr</div>
+  </label>
+
+  <label class="vehicle-option">
+    <input type="radio" name="vehicle_choice" value="GMC Yukon Denali Ultimate" />
+    <img src="media/gmc-yukon-denali-ultimate.jpg" alt="GMC Yukon Denali">
+    <span>GMC Yukon Denali</span>
+    <div class="gold-bar">$400 / 2hrs + $100/hr</div>
+  </label>
+
+  <label class="vehicle-option">
+    <input type="radio" name="vehicle_choice" value="Lincoln Navigator" />
+    <img src="media/lincoln-navigator.jpg" alt="Lincoln Navigator">
+    <span>Lincoln Navigator</span>
+    <div class="gold-bar">$400 / 2hrs + $100/hr</div>
+  </label>
+
+  <label class="vehicle-option">
+    <input type="radio" name="vehicle_choice" value="Maybach Sprinter" />
+    <img src="media/maybach-sprinter.jpg" alt="Maybach Sprinter">
+    <span>Maybach Sprinter</span>
+    <div class="gold-bar">$600 / 2hrs + $400/hr</div>
+  </label>
+
+  <label class="vehicle-option">
+    <input type="radio" name="vehicle_choice" value="Mercedes Sprinter" />
+    <img src="media/mercedes-sprinter.jpg" alt="Mercedes Sprinter">
+    <span>Mercedes Sprinter</span>
+    <div class="gold-bar">$600 / 2hrs + $400/hr</div>
+  </label>
+
+  <label class="vehicle-option">
+    <input type="radio" name="vehicle_choice" value="Audi R8" />
+    <img src="media/r8-audi.jpg" alt="Audi R8">
+    <span>Audi R8</span>
+    <div class="gold-bar">$1000 (Video Only)</div>
+  </label>
+
+  <label class="vehicle-option">
+    <input type="radio" name="vehicle_choice" value="McLaren 570s" />
+    <img src="media/mclaren-570s.jpg" alt="McLaren 570s">
+    <span>McLaren 570s</span>
+    <div class="gold-bar">$1000 (Video Only)</div>
+  </label>
+</div>
+
   
     <div style="text-align:center; margin-top:2rem;">
       <button type="button" onclick="goToStep3()" style="padding: 1rem 3rem; font-size: 1.2rem; border-radius: 50px; background: #d5a85d; color: #061913; font-weight: bold;">
