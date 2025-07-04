@@ -2,72 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#061913" />
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
   <title>DINAMIK TO | Luxury Chauffeured Experience</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet" />
 
-  <!-- Global site tag (gtag.js) - Google Analytics and Ads -->
+  <!-- Google Analytics & Ads -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-275ZSCJX7B"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17284711104"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){dataLayer.push(arguments);}  
     gtag('js', new Date());
     gtag('config', 'G-275ZSCJX7B');
     gtag('config', 'AW-17284711104');
   </script>
 
   <style>
-    body { margin: 0; }
-    header {
-      padding: 1.5rem 2rem;
-      background-color: #0e241a;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
+    body { margin: 0; font-family: 'Poppins', sans-serif; color: #e2ffe0; background-color: #061913; }
+    header { padding: 1.5rem 2rem; background-color: #0e241a; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
     .header-left img { height: 60px; }
-    .header-right a {
-      margin-left: 1.5rem;
-      color: #e2ffe0;
-      text-decoration: none;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-    }
-    .header-right a:hover { color: #c0f5c0; }
-    .header-phone a {
-      margin-left: 1.5rem;
-      color: #e2ffe0;
-      text-decoration: none;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-    }
-    .header-phone a:hover { color: #c0f5c0; }
-    .gold-btn {
-      background-color: #d5a85d;
-      color: #061913;
-      padding: 1rem 2.5rem;
-      font-size: 1.2rem;
-      font-weight: 600;
-      border-radius: 50px;
-      text-decoration: none;
-      font-family: 'Poppins', sans-serif;
-      box-shadow: 0 4px 15px rgba(213, 168, 93, 0.4);
-      transition: all 0.3s ease;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    .gold-btn:hover {
-      background-color: #e6c57a;
-      box-shadow: 0 6px 20px rgba(213, 168, 93, 0.6);
-      transform: translateY(-2px);
-    }
+    .header-right a, .header-phone a { margin-left: 1.5rem; color: #e2ffe0; text-decoration: none; font-weight: 600; }
+    .header-right a:hover, .header-phone a:hover { color: #c0f5c0; }
+    .hero { background: url('media/hero.png') no-repeat center center / cover; height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 1rem; }
+    .hero p { font-size: 2rem; font-weight: 500; line-height: 1.2; max-width: 800px; }
+    .gold-btn { background-color: #d5a85d; color: #061913; padding: 1rem 2.5rem; font-size: 1.1rem; font-weight: 600; border-radius: 50px; text-decoration: none; box-shadow: 0 4px 15px rgba(213, 168, 93, 0.4); transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; display: inline-block; margin: 1rem auto; }
+    .gold-btn:hover { background-color: #e6c57a; box-shadow: 0 6px 20px rgba(213, 168, 93, 0.6); transform: translateY(-2px); }
+    section { padding: 4rem 1rem; }
+    h2, h3 { font-family: 'Playfair Display', serif; color: #d5a85d; text-transform: uppercase; margin-bottom: 1rem; }
+    h2 { font-size: 2.5rem; letter-spacing: 1px; }
+    h3 { font-size: 1.8rem; }
+    .experience-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+    .experience-grid img { width: 100%; height: auto; border-radius: 12px; }
   </style>
 </head>
 <body>
@@ -78,7 +48,7 @@
     <nav class="header-right">
       <a href="index.html">Home</a>
       <a href="chauffeured-cars.html">Chauffeured Services</a>
-      <a href="music-videos&photoshoots.html">Music Videos & Photoshoots</a>
+      <a href="music-videos&photoshoots.html">Media Productions</a>
       <a href="tours.html">City Tours</a>
       <a href="fleet.html">Fleet</a>
       <a href="boats.html">Luxury Boats</a>
@@ -90,141 +60,56 @@
     </div>
   </header>
 
-  <section class="hero" style="background: url('media/hero.png') no-repeat center center / cover; height: 100vh; display: flex; align-items: center; justify-content: center;">
+  <section class="hero">
     <div class="hero-content">
-      <p style="font-size: 1.5rem; font-weight: 500; color: white; text-shadow: none;">Unparalleled Luxury. Curated Experiences. Ultimate Prestige.</p>
+      <p>Indulge in bespoke luxury travel. Experience unmatched elegance, personalized beyond imagination.</p>
     </div>
   </section>
 
+  <!-- Carousel & Fleet Section -->
   <section id="fleet-carousel" style="background-color:#061913; padding: 3rem 1rem 1rem;">
-    <h2 style="color:#b6f5c2; text-align:center; font-family:'Poppins', sans-serif; font-size: 2rem; margin-bottom:1rem;">Explore Our Fleet</h2>
+    <h2 style="color:#b6f5c2; text-align:center; font-size:2rem; margin-bottom:1rem;">Explore Our Fleet</h2>
     <div class="carousel-container">
       <button class="carousel-prev">&#8249;</button>
       <div class="carousel">
         <!-- fleet items here -->
       </div>
+      <button class="carousel-next">&#8250;</button>
     </div>
   </section>
 
-  <!-- WHY CHOOSE US -->
-  <section style="padding: 3rem 2rem 5rem; background-color: #0a1f17; text-align: center;">
-    <h2 style="color:#d5a85d; font-family:'Playfair Display', serif; font-size: 2.5rem; letter-spacing: 1px; text-transform: uppercase;">
-      WHY CHOOSE US
-    </h2>
-    <p style="color:#e2ffe0; font-family:'Poppins', sans-serif; font-size: 1.2rem; max-width: 880px; margin: 2rem auto 1rem; line-height: 1.8;">
-      We provide more than a luxury service — we offer access to a lifestyle. At DINAMIK TO, we deliver curated experiences tailored to those who demand prestige, elegance, and exclusivity. From opulent chauffeured rides to high-end events, yacht affairs, and cinematic productions, we specialize in moments that resonate far beyond the ordinary. Toronto is our stage — and you're the VIP.
+  <!-- Why Choose Section -->
+  <section id="why-choose">
+    <h2>Why Choose DINAMIK TO</h2>
+    <p style="color:#e2ffe0; max-width:800px; margin:0 auto 2rem; line-height:1.6;">
+      At DINAMIK TO, we curate white-glove chauffeured journeys tailored to your every desire. From seamless airport transfers to exclusive event transport, our Black Truck XL fleet epitomizes sophistication and discretion for the discerning few.
     </p>
-    <p style="color:#b6f5c2; font-family:'Poppins'; font-weight: 500; font-size: 1rem; margin-top: 0.5rem;">
-      Add-on: Exclusive videography packages available to immortalize your journey in luxury.
+    <p style="color:#b6f5c2; max-width:600px; margin:0 auto;">
+      Elevate your occasion with seamless concierge services: private tours, yacht charters, media production, and bespoke event planning.
     </p>
-    <h3 style="color: #d5a85d; font-size: 1.8rem; font-family:'Playfair Display'; margin-top: 2rem;">
-      Our Curated Fleet
-    </h3>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
-      <!-- fleet images -->
-    </div>
   </section>
 
-  <!-- Buttons and Experience Boxes Section -->
-  <div style="margin: 3rem auto; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+  <!-- Call Now Button Section -->
+  <section id="call-now" style="text-align:center; background-color:#0e241a;">
+    <a href="tel:+14164770551" class="gold-btn">Call Now: 416‑477‑0551</a>
+  </section>
+
+  <!-- Inquire & Contact Buttons -->
+  <div style="text-align:center; margin:2rem 0;">
     <a href="inquire.html" class="gold-btn">INQUIRE</a>
     <a href="contact.html" class="gold-btn">CONTACT</a>
   </div>
 
-  <section style="padding: 4rem 1rem; background-color: #0e241a;">
-    <h2 style="font-size: 2.4rem; color: #b6f5c2; text-align: center; margin-bottom: 3rem; font-family: 'Poppins', sans-serif; text-transform: uppercase; letter-spacing: 1px;">
-      Curated Experiences by DINAMIK TO
-    </h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; max-width: 100%; margin: 0 auto;">
-      <!-- experience boxes -->
+  <!-- Experiences Section -->
+  <section id="experiences">
+    <h2>Curated Experiences by DINAMIK TO</h2>
+    <div class="experience-grid">
+      <!-- experience boxes here -->
     </div>
   </section>
 
-  <section style="padding: 4rem 2rem; background: #0e241a; text-align: center;">
-    <h2 style="color: #b6f5c2; font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 2rem;">
-      LIVE INSTAGRAM FEED — @FEEXXOO
-    </h2>
-    <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
-    <iframe src="https://cdn.lightwidget.com/widgets/2ab068e24c6b5417958ef1a03c109299.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;height:500px;"></iframe>
-  </section>
-
-  <footer style="text-align: left; padding: 1rem 2rem; font-size: 0.9rem; color: #ccc; background-color: #0e241a;">
+  <footer style="text-align:center; padding:2rem; background-color:#0e241a; font-size:0.9rem; color:#ccc;">
     &copy; 2025 DINAMIK TO Luxury Concierge
-  </footer>
-</body>
-</html>
-
-  </h2>
-
-  <p style="color:#e2ffe0; font-family:'Poppins', sans-serif; font-size: 1.2rem; max-width: 880px; margin: 2rem auto 1rem; line-height: 1.8;">
-    We provide more than a luxury service — we offer access to a lifestyle. At F1DAN, we deliver curated experiences tailored to those who demand prestige, elegance, and exclusivity. From opulent chauffeured rides to high-end events, yacht affairs, and cinematic productions, we specialize in moments that resonate far beyond the ordinary. Toronto is our stage — and you're the VIP.
-  </p>
-  <p style="color:#b6f5c2; font-family:'Poppins'; font-weight: 500; font-size: 1rem; margin-top: 0.5rem;">
-    Add-on: Exclusive videography packages available to immortalize your journey in luxury.
-  </p>
-
-  <h3 style="color: #d5a85d; font-size: 1.8rem; font-family:'Playfair Display'; margin-top: 2rem;">
-    Our Curated Fleet
-  </h3>
-
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
-    <a href="fleet.html"><img src="media/rolls-royce-phantom.jpg" alt="Rolls Royce Phantom" style="width:100%; height:auto; border-radius:12px;"></a>
-    <a href="fleet.html"><img src="media/rolls-royce-ghost.jpg" alt="Rolls Royce Ghost" style="width:100%; height:auto; border-radius:12px;"></a>
-    <a href="fleet.html"><img src="media/rolls-royce-cullinan.jpg" alt="Rolls Royce Cullinan" style="width:100%; height:auto; border-radius:12px;"></a>
-    <a href="fleet.html"><img src="media/maybach-gls600.jpg" alt="Maybach GLS600" style="width:100%; height:auto; border-radius:12px;"></a>
-    <a href="fleet.html"><img src="media/maybach-s550.jpg" alt="Maybach S550" style="width:100%; height:auto; border-radius:12px;"></a>
-    <a href="fleet.html"><img src="media/bentley-bentayga.jpg" alt="Bentley Bentayga" style="width:100%; height:auto; border-radius:12px;"></a>
-    <a href="fleet.html"><img src="media/escalade-esv.jpg" alt="Escalade ESV" style="width:100%; height:auto; border-radius:12px;"></a>
-    <a href="fleet.html"><img src="media/gmc-yukon-denali-ultimate.jpg" alt="GMC Yukon Denali Ultimate" style="width:100%; height:auto; border-radius:12px;"></a>
-    <a href="fleet.html"><img src="media/lincoln-navigator.jpg" alt="Lincoln Navigator" style="width:100%; height:auto; border-radius:12px;"></a>
-    <a href="fleet.html"><img src="media/maybach-sprinter.jpg" alt="Maybach Sprinter" style="width:100%; height:auto; border-radius:12px;"></a>
-    <a href="fleet.html"><img src="media/mercedes-sprinter.jpg" alt="Mercedes Sprinter" style="width:100%; height:auto; border-radius:12px;"></a>
-    <a href="fleet.html"><img src="media/r8-audi.jpg" alt="Audi R8" style="width:100%; height:auto; border-radius:12px;"></a>
-    <a href="fleet.html"><img src="media/mclaren-570s.jpg" alt="McLaren 570s" style="width:100%; height:auto; border-radius:12px;"></a>
-  </div>
-</section>
-
-</body>
-</html>
-
-  
-  <!-- Buttons and Experience Boxes Section -->
-  <div style="margin: 3rem auto; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
-    <a href="inquire.html" class="gold-btn">INQUIRE</a>
-    <a href="contact.html" class="gold-btn">CONTACT</a>
-  </div>
-
-  <section style="padding: 4rem 1rem; background-color: #0e241a;">
-    <h2 style="font-size: 2.4rem; color: #b6f5c2; text-align: center; margin-bottom: 3rem; font-family: 'Poppins', sans-serif; text-transform: uppercase; letter-spacing: 1px;">
-      Curated Experiences by DINAMIK TO
-    </h2>
-
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; max-width: 100%; margin: 0 auto;">
-      <a href="chauffeured-cars.html" style="text-decoration: none;">
-        <div style="height: 280px; display: flex; flex-direction: column; justify-content: flex-end; padding: 1.5rem; border-radius: 12px; background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('media/exotic6.jpg') center/cover no-repeat; box-shadow: 0 0 12px rgba(0,0,0,0.5); color: #fff; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'"><h3 style="color: #d5a85d; font-size: 1.4rem;">Chauffeured Services</h3><p style="margin-top: 0.5rem;">Ride in unmatched style with black XL SUVs and exotic vehicles. Professional drivers. Red carpet service. Fully tailored.</p></div>
-      </a>
-      <a href="music-video-cars.html" style="text-decoration: none;">
-        <div style="height: 280px; display: flex; flex-direction: column; justify-content: flex-end; padding: 1.5rem; border-radius: 12px; background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('media/exotic4.jpg') center/cover no-repeat; box-shadow: 0 0 12px rgba(0,0,0,0.5); color: #fff; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'"><h3 style="color: #d5a85d; font-size: 1.4rem;">Music Videos & Photoshoots</h3><p style="margin-top: 0.5rem;">Rent exotic vehicles for iconic visuals. Full-day support, drivers, lighting, and cinematic production services available.</p></div>
-      </a>
-      <a href="tours.html" style="text-decoration: none;">
-        <div style="height: 280px; display: flex; flex-direction: column; justify-content: flex-end; padding: 1.5rem; border-radius: 12px; background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('media/exotic2.jpg') center/cover no-repeat; box-shadow: 0 0 12px rgba(0,0,0,0.5); color: #fff; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'"><h3 style="color: #d5a85d; font-size: 1.4rem;">City Tours</h3><p style="margin-top: 0.5rem;">Explore Toronto in luxury. Hosts, refreshments, skyline views & curated stops. A truly elevated sightseeing experience.</p></div>
-      </a>
-      <a href="boats.html" style="text-decoration: none;">
-        <div style="height: 280px; display: flex; flex-direction: column; justify-content: flex-end; padding: 1.5rem; border-radius: 12px; background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('media/boat1.jpg') center/cover no-repeat; box-shadow: 0 0 12px rgba(0,0,0,0.5); color: #fff; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'"><h3 style="color: #d5a85d; font-size: 1.4rem;">Luxury Boats</h3><p style="margin-top: 0.5rem;">Yachts. Jet skis. Drone footage. Tie-ups. Bartenders. Cruise Toronto's waterfront in pure curated elegance.</p></div>
-      </a>
-    </div>
-  </section>
-
-  <section style="padding: 4rem 2rem; background: #0e241a; text-align: center;">
-    <h2 style="color: #b6f5c2; font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 2rem;">
-      LIVE INSTAGRAM FEED — @FEEXXOO
-    </h2>
-    <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
-    <iframe src="https://cdn.lightwidget.com/widgets/2ab068e24c6b5417958ef1a03c109299.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;height:500px;"></iframe>
-  </section>
-
-  <footer style="text-align: left; padding: 1rem 2rem; font-size: 0.9rem; color: #ccc; background-color: #0e241a;">
-    &copy; 2025 F1DAN Luxury Concierge
   </footer>
 </body>
 </html>
